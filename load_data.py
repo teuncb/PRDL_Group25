@@ -11,6 +11,7 @@ print(os.getcwd())
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
 def sigmoid(x):
     return 1/(1 + np.exp(-x))
 
