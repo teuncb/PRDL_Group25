@@ -1,37 +1,42 @@
 import h5py
 
-def get_dataset_name(file_name_with_dir):
-    filename_without_dir = file_name_with_dir.split('/')[-1]
-    temp = filename_without_dir.split('_')[:-1]
-    dataset_name="_".join(temp)
-    return dataset_name
-
 import os
 print(os.getcwd())
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
+
+def get_dataset_name(file_name_with_dir):
+    filename_without_dir = file_name_with_dir.split('/')[-1]
+    temp = filename_without_dir.split('_')[:-1]
+    dataset_name="_".join(temp)
+    return dataset_name
+
 def sigmoid(x):
     return 1/(1 + np.exp(-x))
 
-filename_path = "MEG_data/Final Project data/Intra/train/task_motor_105923_5.h5"
+def read_data_file(data_path):
+    with h5py.File(data_path, 'r') as f:
+        dataset_name = get_dataset_name(data_path)
+        matrix = f.get(dataset_name)[()]
+    return matrix
+
+def scale(matrix, scaler, timewise=False):
+    scaler_input = matrix.T if timewise else matrix
+    scaled_matrix = scaler.fit_transform(scaler_input)
+    return scaled_matrix.T if timewise else scaled_matrix
+
+filename_path = "MEG_data/Final Project data/Intra/train/rest_105923_1.h5"
 # OUTLIER ALERT: in "MEG_data/Final Project data/Intra/train/task_motor_105923_5.h5" konden we niet de MinMaxScaler()
 # gebruiken, omdat dan meteen één outlier alles verder dichtbij 1 liet zitten
 
-with h5py.File(filename_path,'r') as f:
-    dataset_name=get_dataset_name(filename_path)
-    matrix=f.get(dataset_name)[()]
-    print(type(matrix))
-    print(matrix.shape)
+matrix = read_data_file(filename_path)
+print(matrix.shape)
 
-    print(matrix[:20])
+scaled_matrix = scale(matrix, StandardScaler(), timewise=True)
 
-    mmscaler = MinMaxScaler()
-    mmscaler.fit(matrix[:300,:1000])
-    larger = mmscaler.transform(matrix[:300,:1000])
-    print(larger)
+plt.imshow(scaled_matrix[:300,:1000])
+plt.colorbar()
+plt.show()
 
-    plt.imshow(larger)
-    plt.colorbar()
-    plt.show()
