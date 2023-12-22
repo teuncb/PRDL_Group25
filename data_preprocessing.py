@@ -1,6 +1,8 @@
 import numpy as np
 
 def array_to_mesh(arr):
+    """Make the input array spatial for the CNN. This code is from Abdellaoui, Fernández, Sahinli & Mehrkanoon (2021).
+    https://github.com/IsmailAlaouiAbdellaoui/Deep-state-classification-MEG/blob/master/AA-CascadeNet_AA-MultiviewNet/data_utils.py"""
     input_rows = 20
     input_columns = 21
     input_channels = 248
