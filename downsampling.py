@@ -1,7 +1,6 @@
 import numpy as np
 from skimage.measure import block_reduce
 
-
 def downsample_matrix(matrix, n, leave_out=True):
     """_summary_
 
