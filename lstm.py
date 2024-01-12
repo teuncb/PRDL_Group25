@@ -2,8 +2,7 @@ import tensorflow as tf
 import numpy as np
 from tensorflow import keras
 import logging
-import load_data
-from create_windows import create_windows
+import data_preprocessing
 from sklearn.preprocessing import LabelBinarizer
 from training import train_batch
 
@@ -66,8 +65,8 @@ textual_labels = ["rest", "task_motor", "task_story_math", "task_working_memory"
 label_encoder = LabelBinarizer()
 label_encoder.fit(textual_labels)
 
-data = load_data.read_prepro_file("Final Project data/Intra/train_prepro/rest_105923_1.h5")
-windows = create_windows(data, 5)
+data = data_preprocessing.read_prepro_file("Final Project data/Intra/train_prepro/rest_105923_1.h5")
+windows = data_preprocessing.create_windows(data, 5)
 
 x_train = []
 

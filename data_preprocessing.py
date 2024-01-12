@@ -1,16 +1,81 @@
+import os
 import numpy as np
+import h5py
+from skimage.measure import block_reduce
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
+
+i_train_path = "MEG_data/Final Project data/Intra/train"
+i_train_prepro_path = "MEG_data/Final Project data/Intra/train_prepro"
+i_test_path = "MEG_data/Final Project data/Intra/test"
+
+c_train_path = "MEG_data/Final Project data/Cross/train"
+c_train_prepro_path = "MEG_data/Final Project data/Cross/train_prepro"
+c_test1_path = "MEG_data/Final Project data/Cross/test1"
+c_test2_path = "MEG_data/Final Project data/Cross/test2"
+c_test3_path = "MEG_data/Final Project data/Cross/test3"
+
+def prepro_cross_files():                                          #Preprocess all the files and save them
+    dirnames = os.listdir(c_train_path)
+    for dir in dirnames:
+        data = read_data_file(c_train_path + "/" + dir)
+        new_data = downsample_matrix(data, 3)
+        scaled_data = scale(new_data, StandardScaler(), timewise=True)      #Beg that this returns an nparray
+        try:
+            hfive = h5py.File(c_train_prepro_path + "/" + dir, 'w')
+        except:
+            raise Exception("You forgot to make a train_prepro path")              #Can maybe be automated idk
+        hfive.create_dataset('dir', data=scaled_data)
+        hfive.close()
+
+def prepro_intra_files():                                          #Preprocess all the files and save them
+    dirnames = os.listdir(i_train_path)                            #Get all the original files
+    for dir in dirnames:                                            #For each file
+        data = read_data_file(i_train_path + "/" + dir)                       #Load the data
+        new_data = downsample_matrix(data, 3)                              #Downsample the data
+        scaled_data = scale(new_data, StandardScaler(), timewise=True)        #Scale the data
+        try:
+            hfive = h5py.File(i_train_prepro_path + "/" + dir, 'w')
+        except:
+            raise Exception("You forgot to make a train_prepro path")                       #Open a new h5 object
+        hfive.create_dataset('dir', data=scaled_data)                                   #Enter data into the object
+        hfive.close()                                                                   #Close (save) the object
+
+def get_dataset_name(file_name_with_dir):
+    filename_without_dir = file_name_with_dir.split('/')[-1]
+    temp = filename_without_dir.split('_')[:-1]
+    dataset_name="_".join(temp)
+    return dataset_name
+
+def sigmoid(x):
+    return 1/(1 + np.exp(-x))
+
+def read_data_file(data_path):
+    with h5py.File(data_path, 'r') as f:
+        dataset_name = get_dataset_name(data_path)
+        matrix = f.get(dataset_name)#[()]
+    return matrix
+
+def read_prepro_file(data_path):
+    hfive = h5py.File(data_path, 'r')
+    matrix = hfive.get('dir')
+    matrix = np.array(matrix)
+    return matrix
+
+def scale(matrix, scaler, timewise=False):
+    scaler_input = matrix.T if timewise else matrix
+    scaled_matrix = scaler.fit_transform(scaler_input)
+    return scaled_matrix.T if timewise else scaled_matrix
 
 def array_to_mesh(arr):
-    """Make the input array spatial for the CNN. This code is from Abdellaoui, Fernández, Sahinli & Mehrkanoon (2021).
-    https://github.com/IsmailAlaouiAbdellaoui/Deep-state-classification-MEG/blob/master/AA-CascadeNet_AA-MultiviewNet/data_utils.py"""
     input_rows = 20
     input_columns = 21
     input_channels = 248
 
     assert arr.shape == (1,
-        input_channels), "the shape of the input array should be (1,248) because there are 248 MEG channels,received array of shape " + str(
+                         input_channels), "the shape of the input array should be (1,248) because there are 248 MEG channels,received array of shape " + str(
         arr.shape)
-    output = np.zeros((input_rows, input_columns), dtype=np.float)
+    output = np.zeros((input_rows, input_columns), dtype=float)
 
     # 121
     output[0][10] = arr[0][120]
@@ -302,26 +367,77 @@ def array_to_mesh(arr):
     return output
 
 
-    training_file_dir = "Data/train"
-    all_train_files = [f for f in listdir(training_file_dir) if isfile(join(training_file_dir, f))]
-    train_files_dirs = []
-    for i in range(len(all_train_files)):
-        train_files_dirs.append(training_file_dir + '/' + all_train_files[i])
-    rest_list, mem_list, math_list, motor_list = separate_list(train_files_dirs)
-    train_files_dirs = order_arranging(rest_list, mem_list, math_list, motor_list)
+def create_meshes(matrix):
+    # Determine how many timesteps the input array represents
+    time_steps = matrix.shape[1]  # Niet ge-hardcode want het wordt anders zodra we gaan downsamplen
 
-    validation_file_dir = "Data/validate"
-    all_validate_files = [f for f in listdir(validation_file_dir) if isfile(join(validation_file_dir, f))]
-    validate_files_dirs = []
-    for i in range(len(all_validate_files)):
-        validate_files_dirs.append(validation_file_dir + '/' + all_validate_files[i])
-    rest_list, mem_list, math_list, motor_list = separate_list(validate_files_dirs)
-    validate_files_dirs = order_arranging(rest_list, mem_list, math_list, motor_list)
+    meshes = []
 
-    test_file_dir = "Data/test"
-    all_test_files = [f for f in listdir(test_file_dir) if isfile(join(test_file_dir, f))]
-    test_files_dirs = []
-    for i in range(len(all_test_files)):
-        test_files_dirs.append(test_file_dir + '/' + all_test_files[i])
-    rest_list, mem_list, math_list, motor_list = separate_list(test_files_dirs)
-    test_files_dirs = order_arranging(rest_list, mem_list, math_list, motor_list)
+    i = 0
+    while i < time_steps:
+        # Array_to_mesh needs inputs in the shape (1, 248), so we expand the first dimension
+        expanded = np.expand_dims(matrix[:, i], axis=0)
+        # Convert the column to a 2D mesh
+        mesh = array_to_mesh(expanded)
+        meshes.append(mesh)
+
+        i += 1
+
+    # Stack the 2D meshes to become a 3D array of shape (width, height, timesteps)
+    stacked_meshes = np.stack(meshes, axis=-1)
+
+    return stacked_meshes
+def downsample_matrix(matrix, n, leave_out=True):
+    """_summary_
+
+    Args:
+        matrix (ndarray): The matrix we want to downsample.
+        n (int): The number of columns we want to leave out. I.e. if n=5,
+            4 columns will be skipped.
+        leave_out (bool, optional): Whether we use drop, we average over the
+            skipped columns if False. Defaults to True.
+
+    Returns:
+        matrix (ndarray): The downsampled matrix.
+    """
+    if leave_out:
+        # Leave out each non-nth column.
+        return matrix[:, ::n]
+
+    means = block_reduce(
+        matrix,
+        block_size=(1, n),
+        func=np.mean,
+        cval=np.mean(matrix),
+    )
+
+    return means
+
+def create_windows(dataset, timeframe):
+    # Will contain the slices of the dataset that represent the different windows
+    windows = []
+
+    num_windows = int(dataset.shape[1] / timeframe)
+
+    i = timeframe
+    j = 0
+    count = 0
+
+    # Loop through the dataset until we have the specified number of windows (might cut off some of the last timesteps)
+    while count < num_windows:
+        # Save the view of the array in the windows list
+        view = dataset[:, j:i]
+        windows.append(view)
+
+        i += timeframe
+        j += timeframe
+        count += 1
+
+    # Return the list of array views
+    return windows
+
+# test
+test = read_data_file("MEG_data/Final Project data/Intra/train/rest_105923_1.h5")
+print(test.shape)
+test_prepro = read_prepro_file("MEG_data/Final Project data/Intra/train_prepro/rest_105923_1.h5")
+print(test_prepro.shape)
