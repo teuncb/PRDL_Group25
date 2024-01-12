@@ -22,7 +22,7 @@ def prepro_cross_files():                                          #Preprocess a
     for dir in dirnames:
         data = read_data_file(c_train_path + "/" + dir)
         scaled_data = scale(data, StandardScaler(), timewise=True)      #Beg that this returns an nparray
-        new_data = downsample_matrix(scaled_data, 3)
+        new_data = downsample_matrix(scaled_data, 9)
         mesh_data = create_meshes(new_data)
         try:
             hfive = h5py.File(c_train_prepro_path + "/" + dir, 'w')
@@ -42,7 +42,7 @@ def prepro_intra_files():                                          #Preprocess a
     for dir in dirnames:                                            #For each file
         data = read_data_file(i_train_path + "/" + dir)                       #Load the data
         scaled_data = scale(data, StandardScaler(), timewise=True)        #Scale the data
-        new_data = downsample_matrix(scaled_data, 3)                              #Downsample the data
+        new_data = downsample_matrix(scaled_data, 9)                              #Downsample the data
         mesh_data = create_meshes(new_data)
         try:
             hfive = h5py.File(i_train_prepro_path + "/" + dir, 'w')
@@ -71,7 +71,7 @@ def sigmoid(x):
 def read_data_file(data_path):
     with h5py.File(data_path, 'r') as f:
         dataset_name = get_dataset_name(data_path)
-        matrix = f.get(dataset_name)#[()]
+        matrix = f.get(dataset_name)[()]
     return matrix
 
 def read_prepro_file(data_path):
@@ -454,8 +454,13 @@ def create_windows(dataset, timeframe):
     # Return the list of array views
     return windows
 
+#prepro_cross_files()
+#print("done with cross")
+prepro_intra_files()
+print("done with intra")
+
 # test
-test = read_data_file("MEG_data/Final Project data/Intra/train/rest_105923_1.h5")
-print(test.shape)
-test_prepro = read_prepro_file("MEG_data/Final Project data/Intra/train_prepro/rest_105923_1.h5")
-print(test_prepro.shape)
+#test = read_data_file("MEG_data/Final Project data/Intra/train/rest_105923_1.h5")
+#print(test.shape)
+#test_prepro = read_prepro_file("MEG_data/Final Project data/Intra/train_prepro/rest_105923_1.h5")
+#print(test_prepro.shape)
