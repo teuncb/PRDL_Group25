@@ -24,7 +24,7 @@ class CascadeNet(keras.Model):
 
         # Flattens the 2D output of the convolutional layers to serve as input for the fully-connected layer
         self.flatten = keras.layers.Flatten(name="flatten")
-        self.fc = keras.layers.Dense(1024, activation="relu", name="fully_connected")
+        self.fc = keras.layers.Dense(8, activation="relu", name="fully_connected")
 
         # To get the data in the shape [batch, timesteps, features] for LSTM, we need to expand the dimensions
         # of the output of the fully connected layer that is of dimension [batch, 1024] to [batch, 1, 1024]
@@ -91,15 +91,15 @@ class CascadeNet(keras.Model):
         return keras.Model(inputs=[x], outputs=self.call(x))
 
 
-model = CascadeNet((20, 21, 1), 5, 4)
-
-# parameter waarden (voor loss metrics en optimizer) hier zijn gewoon voorbeelden, worden uiteindelijk wellicht anders
-model.compile(
-          loss=keras.losses.CategoricalCrossentropy(),
-          metrics=keras.metrics.CategoricalAccuracy(),
-          optimizer=keras.optimizers.Adam())
-
-print(model.build_graph().summary())
+# model = CascadeNet((20, 21, 1), 5, 4)
+#
+# # parameter waarden (voor loss metrics en optimizer) hier zijn gewoon voorbeelden, worden uiteindelijk wellicht anders
+# model.compile(
+#           loss=keras.losses.CategoricalCrossentropy(),
+#           metrics=keras.metrics.CategoricalAccuracy(),
+#           optimizer=keras.optimizers.Adam())
+#
+# print(model.build_graph().summary())
 
 # Model is now ready for training!
 

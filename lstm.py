@@ -4,11 +4,11 @@ from tensorflow import keras
 import logging
 import data_preprocessing
 from sklearn.preprocessing import LabelBinarizer
-from training import train_batch
+from training import train_epoch
 
 
 class JustLSTM(keras.Model):
-    def __init__(self, input_shape, timeframe, num_classes=4):
+    def __init__(self, input_shape, timeframe, lstm_units, dense_units, num_classes=4):
         super().__init__()
 
         # TODO: kijken of we input shape niet uit elkaar trekken in width, height, batch_size en timesteps (nu num_segments)
@@ -17,11 +17,13 @@ class JustLSTM(keras.Model):
 
         # The number of images / timesteps that we will look at for each training step
         self.timeframe = timeframe
+        self.lstm_units = lstm_units
 
-        self.lstm1 = keras.layers.LSTM(self.timeframe, return_sequences=True, name="lstm1")
-        self.lstm2 = keras.layers.LSTM(self.timeframe, name="lstm2")
 
-        self.fc = keras.layers.Dense(32, activation="relu")
+        self.lstm1 = keras.layers.LSTM(self.lstm_units, return_sequences=True, name="lstm1")
+        self.lstm2 = keras.layers.LSTM(self.lstm_units, name="lstm2")
+
+        self.fc = keras.layers.Dense(dense_units, activation="relu")
 
         self.out = keras.layers.Dense(self.num_classes, activation="softmax", name="output")
 
@@ -42,10 +44,10 @@ class JustLSTM(keras.Model):
         lstm1 = self.lstm1(input_layer)
         lstm2 = self.lstm2(lstm1)
 
-        fc = self.fc(lstm2)
+        #fc = self.fc(lstm2)
 
         # Final fully connected layer with softmax to give class probabilities
-        output = self.out(fc)
+        output = self.out(lstm2)
 
         return output
 
@@ -59,22 +61,22 @@ class JustLSTM(keras.Model):
 
 
 # Quick test
-model = JustLSTM((5, 248), 5)
-
-textual_labels = ["rest", "task_motor", "task_story_math", "task_working_memory"]
-label_encoder = LabelBinarizer()
-label_encoder.fit(textual_labels)
-
-data = data_preprocessing.read_prepro_file("Final Project data/Intra/train_prepro/rest_105923_1.h5")
-windows = data_preprocessing.create_windows(data, 5)
-
-x_train = []
-
-for window in windows:
-    x_train.append(tf.convert_to_tensor(np.transpose(window)))
-
-y_train = [tf.convert_to_tensor(label_encoder.transform(["rest"]))] * len(x_train)
-
-train_acc = keras.metrics.CategoricalAccuracy()
-
-train_batch(model, x_train, y_train, train_acc)
+# model = JustLSTM((5, 248), 5)
+#
+# textual_labels = ["rest", "task_motor", "task_story_math", "task_working_memory"]
+# label_encoder = LabelBinarizer()
+# label_encoder.fit(textual_labels)
+#
+# data = data_preprocessing.read_prepro_file("Final Project data/Intra/train_prepro/rest_105923_1.h5")
+# windows = data_preprocessing.create_windows(data, 5)
+#
+# x_train = []
+#
+# for window in windows:
+#     x_train.append(tf.convert_to_tensor(np.transpose(window)))
+#
+# y_train = [tf.convert_to_tensor(label_encoder.transform(["rest"]))] * len(x_train)
+#
+# train_acc = keras.metrics.CategoricalAccuracy()
+#
+# train_batch(model, x_train, y_train, train_acc)

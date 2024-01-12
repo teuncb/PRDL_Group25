@@ -5,68 +5,71 @@ from skimage.measure import block_reduce
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
 
-i_train_path = "MEG_data/Final Project data/Intra/train"
-i_train_prepro_path = "MEG_data/Final Project data/Intra/train_prepro"
-i_train_prepro_path_mesh = "MEG_data/Final Project data/Intra/train_prepro_mesh"
-i_test_path = "MEG_data/Final Project data/Intra/test"
+i_train_path = "Final Project data/Intra/train"
+i_train_prepro_path = "Final Project data/Intra/train_prepro"
+i_train_prepro_path_mesh = "Final Project data/Intra/train_prepro_mesh"
+i_test_path = "Final Project data/Intra/test"
 
-c_train_path = "MEG_data/Final Project data/Cross/train"
-c_train_prepro_path = "MEG_data/Final Project data/Cross/train_prepro"
-c_train_prepro_path_mesh = "MEG_data/Final Project data/Cross/train_prepro_mesh"
-c_test1_path = "MEG_data/Final Project data/Cross/test1"
-c_test2_path = "MEG_data/Final Project data/Cross/test2"
-c_test3_path = "MEG_data/Final Project data/Cross/test3"
+c_train_path = "Final Project data/Cross/train"
+c_train_prepro_path = "Final Project data/Cross/train_prepro"
+c_train_prepro_path_mesh = "Final Project data/Cross/train_prepro_mesh"
+c_test1_path = "Final Project data/Cross/test1"
+c_test2_path = "Final Project data/Cross/test2"
+c_test3_path = "Final Project data/Cross/test3"
 
-def prepro_cross_files():                                          #Preprocess all the files and save them
+
+def prepro_cross_files():  # Preprocess all the files and save them
     dirnames = os.listdir(c_train_path)
     for dir in dirnames:
         data = read_data_file(c_train_path + "/" + dir)
-        scaled_data = scale(data, StandardScaler(), timewise=True)      #Beg that this returns an nparray
+        scaled_data = scale(data, StandardScaler(), timewise=True)  # Beg that this returns an nparray
         new_data = downsample_matrix(scaled_data, 9)
         mesh_data = create_meshes(new_data)
         try:
             hfive = h5py.File(c_train_prepro_path + "/" + dir, 'w')
         except:
-            raise Exception("You forgot to make a train_prepro path")              #Can maybe be automated idk
+            raise Exception("You forgot to make a train_prepro path")  # Can maybe be automated idk
         hfive.create_dataset('dir', data=new_data)
         hfive.close()
         try:
             hfivemesh = h5py.File(c_train_prepro_path_mesh + "/" + dir, 'w')
         except:
-            raise Exception("You forgot to make a train_prepro_mesh path")                       #Open a new h5 object
-        hfivemesh.create_dataset('dir', data=mesh_data)                                   #Enter data into the object
-        hfivemesh.close()    
+            raise Exception("You forgot to make a train_prepro_mesh path")  # Open a new h5 object
+        hfivemesh.create_dataset('dir', data=mesh_data)  # Enter data into the object
+        hfivemesh.close()
 
-def prepro_intra_files():                                          #Preprocess all the files and save them
-    dirnames = os.listdir(i_train_path)                            #Get all the original files
-    for dir in dirnames:                                            #For each file
-        data = read_data_file(i_train_path + "/" + dir)                       #Load the data
-        scaled_data = scale(data, StandardScaler(), timewise=True)        #Scale the data
-        new_data = downsample_matrix(scaled_data, 9)                              #Downsample the data
+
+def prepro_intra_files():  # Preprocess all the files and save them
+    dirnames = os.listdir(i_train_path)  # Get all the original files
+    for dir in dirnames:  # For each file
+        data = read_data_file(i_train_path + "/" + dir)  # Load the data
+        scaled_data = scale(data, StandardScaler(), timewise=True)  # Scale the data
+        new_data = downsample_matrix(scaled_data, 9)  # Downsample the data
         mesh_data = create_meshes(new_data)
         try:
             hfive = h5py.File(i_train_prepro_path + "/" + dir, 'w')
         except:
-            raise Exception("You forgot to make a train_prepro path")                       #Open a new h5 object
-        hfive.create_dataset('dir', data=new_data)                                   #Enter data into the object
-        hfive.close()                                                                   #Close (save) the object
+            raise Exception("You forgot to make a train_prepro path")  # Open a new h5 object
+        hfive.create_dataset('dir', data=new_data)  # Enter data into the object
+        hfive.close()  # Close (save) the object
         try:
             hfivemesh = h5py.File(i_train_prepro_path_mesh + "/" + dir, 'w')
         except:
-            raise Exception("You forgot to make a train_prepro_mesh path")                       #Open a new h5 object
-        hfivemesh.create_dataset('dir', data=mesh_data)                                   #Enter data into the object
-        hfivemesh.close()    
+            raise Exception("You forgot to make a train_prepro_mesh path")  # Open a new h5 object
+        hfivemesh.create_dataset('dir', data=mesh_data)  # Enter data into the object
+        hfivemesh.close()
 
-        
 
 def get_dataset_name(file_name_with_dir):
     filename_without_dir = file_name_with_dir.split('/')[-1]
     temp = filename_without_dir.split('_')[:-1]
-    dataset_name="_".join(temp)
+    dataset_name = "_".join(temp)
     return dataset_name
 
+
 def sigmoid(x):
-    return 1/(1 + np.exp(-x))
+    return 1 / (1 + np.exp(-x))
+
 
 def read_data_file(data_path):
     with h5py.File(data_path, 'r') as f:
@@ -74,16 +77,19 @@ def read_data_file(data_path):
         matrix = f.get(dataset_name)[()]
     return matrix
 
+
 def read_prepro_file(data_path):
     hfive = h5py.File(data_path, 'r')
     matrix = hfive.get('dir')
     matrix = np.array(matrix)
     return matrix
 
+
 def scale(matrix, scaler, timewise=False):
     scaler_input = matrix.T if timewise else matrix
     scaled_matrix = scaler.fit_transform(scaler_input)
     return scaled_matrix.T if timewise else scaled_matrix
+
 
 def array_to_mesh(arr):
     input_rows = 20
@@ -405,6 +411,8 @@ def create_meshes(matrix):
     stacked_meshes = np.stack(meshes, axis=-1)
 
     return stacked_meshes
+
+
 def downsample_matrix(matrix, n, leave_out=True):
     """_summary_
 
@@ -431,11 +439,15 @@ def downsample_matrix(matrix, n, leave_out=True):
 
     return means
 
-def create_windows(dataset, timeframe):
+
+def create_windows(dataset, model_type, timeframe):
     # Will contain the slices of the dataset that represent the different windows
     windows = []
 
-    num_windows = int(dataset.shape[1] / timeframe)
+    if model_type == "cascade":
+        num_windows = int(dataset.shape[2] / timeframe)
+    else:
+        num_windows = int(dataset.shape[1] / timeframe)
 
     i = timeframe
     j = 0
@@ -444,23 +456,26 @@ def create_windows(dataset, timeframe):
     # Loop through the dataset until we have the specified number of windows (might cut off some of the last timesteps)
     while count < num_windows:
         # Save the view of the array in the windows list
-        view = dataset[:, j:i]
+        if model_type == "cascade":
+            view = dataset[:, :, j:i]
+        else:
+            view = dataset[:, j:i]
         windows.append(view)
 
         i += timeframe
         j += timeframe
         count += 1
-
     # Return the list of array views
     return windows
 
-#prepro_cross_files()
-#print("done with cross")
-prepro_intra_files()
-print("done with intra")
+
+# prepro_cross_files()
+# print("done with cross")
+# prepro_cross_files()
+# print("done with cross")
 
 # test
-#test = read_data_file("MEG_data/Final Project data/Intra/train/rest_105923_1.h5")
-#print(test.shape)
-#test_prepro = read_prepro_file("MEG_data/Final Project data/Intra/train_prepro/rest_105923_1.h5")
-#print(test_prepro.shape)
+# test = read_data_file("MEG_data/Final Project data/Intra/train/rest_105923_1.h5")
+# print(test.shape)
+# test_prepro = read_prepro_file("MEG_data/Final Project data/Intra/train_prepro/rest_105923_1.h5")
+# print(test_prepro.shape)
