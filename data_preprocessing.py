@@ -7,10 +7,12 @@ from sklearn.preprocessing import StandardScaler
 
 i_train_path = "MEG_data/Final Project data/Intra/train"
 i_train_prepro_path = "MEG_data/Final Project data/Intra/train_prepro"
+i_train_prepro_path_mesh = "MEG_data/Final Project data/Intra/train_prepro_mesh"
 i_test_path = "MEG_data/Final Project data/Intra/test"
 
 c_train_path = "MEG_data/Final Project data/Cross/train"
 c_train_prepro_path = "MEG_data/Final Project data/Cross/train_prepro"
+c_train_prepro_path_mesh = "MEG_data/Final Project data/Cross/train_prepro_mesh"
 c_test1_path = "MEG_data/Final Project data/Cross/test1"
 c_test2_path = "MEG_data/Final Project data/Cross/test2"
 c_test3_path = "MEG_data/Final Project data/Cross/test3"
@@ -19,27 +21,43 @@ def prepro_cross_files():                                          #Preprocess a
     dirnames = os.listdir(c_train_path)
     for dir in dirnames:
         data = read_data_file(c_train_path + "/" + dir)
-        new_data = downsample_matrix(data, 3)
-        scaled_data = scale(new_data, StandardScaler(), timewise=True)      #Beg that this returns an nparray
+        scaled_data = scale(data, StandardScaler(), timewise=True)      #Beg that this returns an nparray
+        new_data = downsample_matrix(scaled_data, 3)
+        mesh_data = create_meshes(new_data)
         try:
             hfive = h5py.File(c_train_prepro_path + "/" + dir, 'w')
         except:
             raise Exception("You forgot to make a train_prepro path")              #Can maybe be automated idk
-        hfive.create_dataset('dir', data=scaled_data)
+        hfive.create_dataset('dir', data=new_data)
         hfive.close()
+        try:
+            hfivemesh = h5py.File(c_train_prepro_path_mesh + "/" + dir, 'w')
+        except:
+            raise Exception("You forgot to make a train_prepro_mesh path")                       #Open a new h5 object
+        hfivemesh.create_dataset('dir', data=mesh_data)                                   #Enter data into the object
+        hfivemesh.close()    
 
 def prepro_intra_files():                                          #Preprocess all the files and save them
     dirnames = os.listdir(i_train_path)                            #Get all the original files
     for dir in dirnames:                                            #For each file
         data = read_data_file(i_train_path + "/" + dir)                       #Load the data
-        new_data = downsample_matrix(data, 3)                              #Downsample the data
-        scaled_data = scale(new_data, StandardScaler(), timewise=True)        #Scale the data
+        scaled_data = scale(data, StandardScaler(), timewise=True)        #Scale the data
+        new_data = downsample_matrix(scaled_data, 3)                              #Downsample the data
+        mesh_data = create_meshes(new_data)
         try:
             hfive = h5py.File(i_train_prepro_path + "/" + dir, 'w')
         except:
             raise Exception("You forgot to make a train_prepro path")                       #Open a new h5 object
-        hfive.create_dataset('dir', data=scaled_data)                                   #Enter data into the object
+        hfive.create_dataset('dir', data=new_data)                                   #Enter data into the object
         hfive.close()                                                                   #Close (save) the object
+        try:
+            hfivemesh = h5py.File(i_train_prepro_path_mesh + "/" + dir, 'w')
+        except:
+            raise Exception("You forgot to make a train_prepro_mesh path")                       #Open a new h5 object
+        hfivemesh.create_dataset('dir', data=mesh_data)                                   #Enter data into the object
+        hfivemesh.close()    
+
+        
 
 def get_dataset_name(file_name_with_dir):
     filename_without_dir = file_name_with_dir.split('/')[-1]
