@@ -9,7 +9,7 @@ from sklearn.metrics import precision_recall_fscore_support, accuracy_score, con
 import matplotlib.pyplot as plt
 
 
-def validation(model_path, val_data_path, timeframe):
+def validation(model_type, model_path, val_data_path, timeframe):
     # Deze functie heet nog validation omdat ik hem schreef met als doel validation, maar hij werkt wel als algemene evaluation functie
     # Voor validation kunnen we een deel van deze functie kopiëren en dan in een losse validate zetten en dit alleen voor echte evaluation gebruiken
     # (bijv. de confusion matrix plotten hoef niet voor validation set)
@@ -21,7 +21,7 @@ def validation(model_path, val_data_path, timeframe):
     label_encoder = LabelBinarizer()
     label_encoder.fit(textual_labels)
 
-    x_val, y_val = get_test_set("lstm", val_data_path, label_encoder, timeframe)
+    x_val, y_val = get_test_set(model_type, val_data_path, label_encoder, timeframe)
 
     # Generate logit predictions by the model on the validation data
     logits = model(x_val)
@@ -89,4 +89,4 @@ val_data_path = "Final Project data/Validation"
 # BELANGRIJK OM AAN TE PASSEN AAN WAT HET MODEL TIJDENS TRAINEN HAD ANDERS GAAT HIJ HUILEN
 timeframe = 20
 
-validation(model_path, val_data_path, timeframe)
+validation("lstm", model_path, val_data_path, timeframe)
