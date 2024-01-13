@@ -5,17 +5,19 @@ from skimage.measure import block_reduce
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
 
-i_train_path = "Final Project data/Intra/train"
-i_train_prepro_path = "Final Project data/Intra/train_prepro"
-i_train_prepro_path_mesh = "Final Project data/Intra/train_prepro_mesh"
-i_test_path = "Final Project data/Intra/test"
+i_train_path = "MEG_Data/Final Project data/Intra/train"
+i_train_prepro_path = "MEG_Data/Final Project data/Intra/train_prepro"
+i_train_prepro_path_mesh = "MEG_Data/Final Project data/Intra/train_prepro_mesh"
+i_test_path = "MEG_Data/Final Project data/Intra/test"
 
-c_train_path = "Final Project data/Cross/train"
-c_train_prepro_path = "Final Project data/Cross/train_prepro"
-c_train_prepro_path_mesh = "Final Project data/Cross/train_prepro_mesh"
-c_test1_path = "Final Project data/Cross/test1"
-c_test2_path = "Final Project data/Cross/test2"
-c_test3_path = "Final Project data/Cross/test3"
+c_train_path = "MEG_Data/Final Project data/Cross/train"
+c_train_prepro_path = "MEG_Data/Final Project data/Cross/train_prepro"
+c_train_prepro_path_mesh = "MEG_Data/Final Project data/Cross/train_prepro_mesh"
+c_test1_prepro_path = "MEG_Data/Final Project data/Cross/test1_prepro"
+c_test1_prepro_path_mesh = "MEG_Data/Final Project data/Cross/test1_prepro_mesh"
+c_test1_path = "MEG_Data/Final Project data/Cross/test1"
+c_test2_path = "MEG_Data/Final Project data/Cross/test2"
+c_test3_path = "MEG_Data/Final Project data/Cross/test3"
 
 
 def prepro_cross_files():  # Preprocess all the files and save them
@@ -59,6 +61,25 @@ def prepro_intra_files():  # Preprocess all the files and save them
         hfivemesh.create_dataset('dir', data=mesh_data)  # Enter data into the object
         hfivemesh.close()
 
+def prepro_cross_test():  # Preprocess all the files and save them
+    dirnames = os.listdir(c_test1_path)
+    for dir in dirnames:
+        data = read_data_file(c_test1_path + "/" + dir)
+        scaled_data = scale(data, StandardScaler(), timewise=True)  # Beg that this returns an nparray
+        new_data = downsample_matrix(scaled_data, 9)
+        mesh_data = create_meshes(new_data)
+        try:
+            hfive = h5py.File(c_test1_prepro_path + "/" + dir, 'w')
+        except:
+            raise Exception("You forgot to make a test1_prepro path")  # Can maybe be automated idk
+        hfive.create_dataset('dir', data=new_data)
+        hfive.close()
+        try:
+            hfivemesh = h5py.File(c_test1_prepro_path_mesh + "/" + dir, 'w')
+        except:
+            raise Exception("You forgot to make a test1_prepro_mesh path")  # Open a new h5 object
+        hfivemesh.create_dataset('dir', data=mesh_data)  # Enter data into the object
+        hfivemesh.close()
 
 def get_dataset_name(file_name_with_dir):
     filename_without_dir = file_name_with_dir.split('/')[-1]
@@ -471,10 +492,10 @@ def create_windows(dataset, model_type, timeframe):
 
 # prepro_cross_files()
 # print("done with cross")
-# prepro_cross_files()
-# print("done with cross")
+# prepro_cross_test()
+# print("done with test prepro")
 
-# test
+
 # test = read_data_file("MEG_data/Final Project data/Intra/train/rest_105923_1.h5")
 # print(test.shape)
 # test_prepro = read_prepro_file("MEG_data/Final Project data/Intra/train_prepro/rest_105923_1.h5")

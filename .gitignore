@@ -230,3 +230,7 @@ fabric.properties
 ### CUSTOM
 # Dataset
 MEG_data
+
+# Random .idea shit
+.idea/misc.xml
+.idea/PRDL_Group25.iml
