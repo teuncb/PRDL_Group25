@@ -8,9 +8,8 @@ from sklearn.preprocessing import LabelBinarizer
 from sklearn.metrics import precision_recall_fscore_support, accuracy_score, confusion_matrix, ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 
-
-def validation(model_type, model_path, val_data_path, timeframe):
-    # Deze functie heet nog validation omdat ik hem schreef met als doel validation, maar hij werkt wel als algemene evaluation functie
+def evaluate_model(model_type, model_path, val_data_paths, timeframe, show_results=True):
+    # Deze functie heette eerst validation omdat ik hem schreef met als doel validation, maar hij werkt wel als algemene evaluation functie
     # Voor validation kunnen we een deel van deze functie kopiëren en dan in een losse validate zetten en dit alleen voor echte evaluation gebruiken
     # (bijv. de confusion matrix plotten hoef niet voor validation set)
     model = keras.models.load_model(model_path)
@@ -21,7 +20,7 @@ def validation(model_type, model_path, val_data_path, timeframe):
     label_encoder = LabelBinarizer()
     label_encoder.fit(textual_labels)
 
-    x_val, y_val = get_test_set(model_type, val_data_path, label_encoder, timeframe)
+    x_val, y_val = get_test_set(model_type, val_data_paths, label_encoder, timeframe)
 
     # Generate logit predictions by the model on the validation data
     logits = model(x_val)
@@ -32,29 +31,39 @@ def validation(model_type, model_path, val_data_path, timeframe):
 
     # Calculate performance metrics
     accuracy = accuracy_score(numeric_y_true, predictions)
-    print("Accuracy = {}".format(accuracy))
+    if show_results:
+        print("Accuracy = {}".format(accuracy))
 
     performance_metrics = precision_recall_fscore_support(numeric_y_true, predictions, average="macro")
-    print("Precision = {}, recall = {}, F1-score = {}".format(performance_metrics[0], performance_metrics[1],
+    if show_results:
+        print("Precision = {}, recall = {}, F1-score = {}".format(performance_metrics[0], performance_metrics[1],
                                                               performance_metrics[2]))
 
-    conf_matrix = confusion_matrix(numeric_y_true, predictions)
+    if show_results:
+        conf_matrix = confusion_matrix(numeric_y_true, predictions)
 
-    # Ik had eerst de textuele classnames erin gezet, maar doordat die lang zijn wordt dat best lelijk
-    # --> even kijken hoe we dat netjes op kunnen lossen
-    disp = ConfusionMatrixDisplay(conf_matrix)
-    disp.plot()
-    plt.tight_layout()
-    plt.show()
+        # Ik had eerst de textuele classnames erin gezet, maar doordat die lang zijn wordt dat best lelijk
+        # --> even kijken hoe we dat netjes op kunnen lossen
+        disp = ConfusionMatrixDisplay(conf_matrix)
+        disp.plot()
+        plt.tight_layout()
+        plt.show()
+
+    return accuracy
 
 
-def get_test_set(model_type, test_data_path, label_encoder, timeframe):
-    dirnames = os.listdir(test_data_path)
+def get_test_set(model_type, test_data_paths, label_encoder, timeframe):
+    all_data_files = []
+    for dir_path in test_data_paths:
+        dirnames = os.listdir(dir_path)
+        for filename in dirnames:
+            all_data_files.append(dir_path + '/' + filename)
+
     i = 0
     fit_list = []
 
-    while i < len(dirnames):  # Load the 8 datafiles
-        filename = test_data_path + "/" + dirnames[i]
+    while i < len(all_data_files):  # Load the 16 datafiles
+        filename = all_data_files[i]
 
         data = data_preprocessing.read_prepro_file(filename)
         label = extract_label(filename)
@@ -84,9 +93,9 @@ def get_test_set(model_type, test_data_path, label_encoder, timeframe):
     return x_test, y_test
 
 
-model_path = "Trained LSTMs/trained_LSTM_e4_20_20_intra"
-val_data_path = "Final Project data/Validation"
+model_path = "trained_models/trained_LSTM_e4_20_20_cross"
+val_data_paths = ["MEG_Data/Final Project data/Cross/test1", "MEG_Data/Final Project data/Cross/test1"]
 # BELANGRIJK OM AAN TE PASSEN AAN WAT HET MODEL TIJDENS TRAINEN HAD ANDERS GAAT HIJ HUILEN
 timeframe = 20
 
-validation("lstm", model_path, val_data_path, timeframe)
+evaluate_model("lstm", model_path, val_data_paths, timeframe)
