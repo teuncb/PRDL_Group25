@@ -1,0 +1,1812 @@
+Starting epoch 1
+
+Fitting on files 0-8....
+Fitting on file 1 containing task: task_motor
+Training loss value at step 0: 1.3885600566864014
+Training loss value at step 100: 0.00021252757869660854
+Training loss value at step 200: 0.00016234986833296716
+Training loss value at step 300: 8.582700684200972e-05
+Training loss value at step 400: 8.225102646974847e-05
+Training loss value at step 500: 5.364274329622276e-05
+Training loss value at step 600: 2.2291887944447808e-05
+Training loss value at step 700: 1.966933996300213e-05
+Training accuracy over whole file: 0.9974715709686279
+---------------------------------------------------
+Fitting on file 2 containing task: task_motor
+Training loss value at step 0: 1.9311717551317997e-05
+Training loss value at step 100: 1.728519782773219e-05
+Training loss value at step 200: 4.172316494077677e-06
+Training loss value at step 300: 2.264974000354414e-06
+Training loss value at step 400: 2.9802276912960224e-06
+Training loss value at step 500: 2.145764938177308e-06
+Training loss value at step 600: 2.145764938177308e-06
+Training loss value at step 700: 2.145764938177308e-06
+Training accuracy over whole file: 0.998735785484314
+---------------------------------------------------
+Fitting on file 3 containing task: task_story_math
+Training loss value at step 0: 13.307690620422363
+Training loss value at step 100: 0.0037265634164214134
+Training loss value at step 200: 0.0023317548912018538
+Training loss value at step 300: 0.0006418551784008741
+Training loss value at step 400: 0.00020752183627337217
+Training loss value at step 500: 0.0005528590409085155
+Training loss value at step 600: 0.00017593742813915014
+Training loss value at step 700: 9.941560711013153e-05
+Training accuracy over whole file: 0.9962073564529419
+---------------------------------------------------
+Fitting on file 4 containing task: rest
+Training loss value at step 0: 9.955466270446777
+Training loss value at step 100: 0.0003496989083942026
+Training loss value at step 200: 0.00021217002358753234
+Training loss value at step 300: 0.0001793938863556832
+Training loss value at step 400: 8.153582894010469e-05
+Training loss value at step 500: 0.0002205128694185987
+Training loss value at step 600: 1.680836794548668e-05
+Training loss value at step 700: 3.397406908334233e-05
+Training accuracy over whole file: 0.9943109750747681
+---------------------------------------------------
+Fitting on file 5 containing task: task_motor
+Training loss value at step 0: 11.52961254119873
+Training loss value at step 100: 8.713819261174649e-05
+Training loss value at step 200: 1.6689160474925302e-05
+Training loss value at step 300: 1.8000440832111053e-05
+Training loss value at step 400: 3.862306402879767e-05
+Training loss value at step 500: 1.4185804502631072e-05
+Training loss value at step 600: 4.088794958079234e-05
+Training loss value at step 700: 3.218599158572033e-05
+Training accuracy over whole file: 0.9929203391075134
+---------------------------------------------------
+Fitting on file 6 containing task: rest
+Training loss value at step 0: 10.68102741241455
+Training loss value at step 100: 4.3987260141875595e-05
+Training loss value at step 200: 0.00010883215873036534
+Training loss value at step 300: 8.546940807718784e-05
+Training loss value at step 400: 0.0007930232677608728
+Training loss value at step 500: 0.10729438811540604
+Training loss value at step 600: 0.0009129646932706237
+Training loss value at step 700: 6.806619057897478e-05
+Training accuracy over whole file: 0.992414653301239
+---------------------------------------------------
+Fitting on file 7 containing task: task_working_memory
+Training loss value at step 0: 12.945192337036133
+Training loss value at step 100: 5.602820692729438e-06
+Training loss value at step 200: 2.7418097943154862e-06
+Training loss value at step 300: 4.410734163684538e-06
+Training loss value at step 400: 6.794906312279636e-06
+Training loss value at step 500: 1.9073468138230965e-06
+Training loss value at step 600: 1.3470558769768104e-05
+Training loss value at step 700: 2.50339189733495e-06
+Training accuracy over whole file: 0.9913310408592224
+---------------------------------------------------
+Fitting on file 8 containing task: task_working_memory
+Training loss value at step 0: 0.0002540027489885688
+Training loss value at step 100: 7.510157047363464e-06
+Training loss value at step 200: 3.933898824470816e-06
+Training loss value at step 300: 4.410734163684538e-06
+Training loss value at step 400: 8.344646857949556e-07
+Training loss value at step 500: 2.264974000354414e-06
+Training loss value at step 600: 2.861018856492592e-06
+Training loss value at step 700: 2.50339189733495e-06
+Training accuracy over whole file: 0.992414653301239
+---------------------------------------------------
+--------------------------------------------------------------
+Fitting on files 8-16....
+Fitting on file 1 containing task: task_working_memory
+Training loss value at step 0: 1.311301275563892e-06
+Training loss value at step 100: 7.152555099310121e-07
+Training loss value at step 200: 1.6689286894688848e-06
+Training loss value at step 300: 1.4305104514278355e-06
+Training loss value at step 400: 2.50339189733495e-06
+Training loss value at step 500: 3.3378546504536644e-06
+Training loss value at step 600: 2.622600959512056e-06
+Training loss value at step 700: 7.271740287251305e-06
+Training accuracy over whole file: 0.993257462978363
+---------------------------------------------------
+Fitting on file 2 containing task: task_story_math
+Training loss value at step 0: 13.309263229370117
+Training loss value at step 100: 1.3708974620385561e-05
+Training loss value at step 200: 0.00032789100077934563
+Training loss value at step 300: 0.00047791501856409013
+Training loss value at step 400: 0.00013791563105769455
+Training loss value at step 500: 5.8412379075889476e-06
+Training loss value at step 600: 6.389413465512916e-05
+Training loss value at step 700: 1.2874520507466514e-05
+Training accuracy over whole file: 0.9934260249137878
+---------------------------------------------------
+Fitting on file 3 containing task: task_working_memory
+Training loss value at step 0: 13.157288551330566
+Training loss value at step 100: 4.768360213347478e-06
+Training loss value at step 200: 0.0040458738803863525
+Training loss value at step 300: 4.768360213347478e-06
+Training loss value at step 400: 5.602820692729438e-06
+Training loss value at step 500: 1.5616295058862306e-05
+Training loss value at step 600: 4.887569048150908e-06
+Training loss value at step 700: 1.1086402082582936e-05
+Training accuracy over whole file: 0.9929893016815186
+---------------------------------------------------
+Fitting on file 4 containing task: task_story_math
+Training loss value at step 0: 14.323983192443848
+Training loss value at step 100: 0.0002008474839385599
+Training loss value at step 200: 4.0411134250462055e-05
+Training loss value at step 300: 3.886147169396281e-05
+Training loss value at step 400: 0.00014101465058047324
+Training loss value at step 500: 3.242440288886428e-05
+Training loss value at step 600: 4.875540980719961e-05
+Training loss value at step 700: 2.3364747903542593e-05
+Training accuracy over whole file: 0.9925200343132019
+---------------------------------------------------
+Fitting on file 5 containing task: task_motor
+Training loss value at step 0: 11.959643363952637
+Training loss value at step 100: 3.576214658096433e-05
+Training loss value at step 200: 2.6940935640595853e-05
+Training loss value at step 300: 0.00024005869636312127
+Training loss value at step 400: 0.0004836343287024647
+Training loss value at step 500: 0.000408327643526718
+Training loss value at step 600: 2.3483953555114567e-05
+Training loss value at step 700: 2.145764938177308e-06
+Training accuracy over whole file: 0.9921229481697083
+---------------------------------------------------
+Fitting on file 6 containing task: task_motor
+Training loss value at step 0: 0.0006731866160407662
+Training loss value at step 100: 3.933898824470816e-06
+Training loss value at step 200: 1.1920922133867862e-06
+Training loss value at step 300: 6.794906312279636e-06
+Training loss value at step 400: 1.4305104514278355e-06
+Training loss value at step 500: 1.764281842042692e-05
+Training loss value at step 600: 4.887569048150908e-06
+Training loss value at step 700: 6.318072337307967e-06
+Training accuracy over whole file: 0.9926855564117432
+---------------------------------------------------
+Fitting on file 7 containing task: task_motor
+Training loss value at step 0: 1.0728830375228426e-06
+Training loss value at step 100: 9.536738616588991e-07
+Training loss value at step 200: 9.536738616588991e-07
+Training loss value at step 300: 1.0728830375228426e-06
+Training loss value at step 400: 9.536738616588991e-07
+Training loss value at step 500: 1.4305104514278355e-06
+Training loss value at step 600: 1.1920922133867862e-06
+Training loss value at step 700: 1.0371154530730564e-05
+Training accuracy over whole file: 0.9931731820106506
+---------------------------------------------------
+Fitting on file 8 containing task: task_story_math
+Training loss value at step 0: 15.423216819763184
+Training loss value at step 100: 0.00024673278676345944
+Training loss value at step 200: 8.892617915989831e-05
+Training loss value at step 300: 0.0048510003834962845
+Training loss value at step 400: 3.015949550899677e-05
+Training loss value at step 500: 0.0008915264043025672
+Training loss value at step 600: 8.844937838148326e-05
+Training loss value at step 700: 4.3748852476710454e-05
+Training accuracy over whole file: 0.993046760559082
+---------------------------------------------------
+--------------------------------------------------------------
+Fitting on files 16-24....
+Fitting on file 1 containing task: task_working_memory
+Training loss value at step 0: 11.5257568359375
+Training loss value at step 100: 6.747018051100895e-05
+Training loss value at step 200: 4.8636207793606445e-05
+Training loss value at step 300: 3.9934315282152966e-05
+Training loss value at step 400: 8.916457591112703e-05
+Training loss value at step 500: 0.00033480284037068486
+Training loss value at step 600: 0.00017379203927703202
+Training loss value at step 700: 4.660974445869215e-05
+Training accuracy over whole file: 0.9925634264945984
+---------------------------------------------------
+Fitting on file 2 containing task: task_motor
+Training loss value at step 0: 12.572564125061035
+Training loss value at step 100: 0.0001699779968475923
+Training loss value at step 200: 8.713819261174649e-05
+Training loss value at step 300: 0.001963712740689516
+Training loss value at step 400: 0.00028355870745144784
+Training loss value at step 500: 0.00014435203047469258
+Training loss value at step 600: 7.223821739898995e-05
+Training loss value at step 700: 4.60137271147687e-05
+Training accuracy over whole file: 0.992203950881958
+---------------------------------------------------
+Fitting on file 3 containing task: rest
+Training loss value at step 0: 10.581239700317383
+Training loss value at step 100: 0.0005373702733777463
+Training loss value at step 200: 0.00031883400515653193
+Training loss value at step 300: 6.723177648382261e-05
+Training loss value at step 400: 0.00025018901214934886
+Training loss value at step 500: 0.0013090145075693727
+Training loss value at step 600: 2.658331868587993e-05
+Training loss value at step 700: 0.00020382710499688983
+Training accuracy over whole file: 0.9915496706962585
+---------------------------------------------------
+Fitting on file 4 containing task: task_story_math
+Training loss value at step 0: 12.681849479675293
+Training loss value at step 100: 0.0004804172203876078
+Training loss value at step 200: 0.0011041027028113604
+Training loss value at step 300: 9.810443589231e-05
+Training loss value at step 400: 0.00015209948469419032
+Training loss value at step 500: 0.0003184764937032014
+Training loss value at step 600: 8.761498611420393e-05
+Training loss value at step 700: 5.304672595229931e-05
+Training accuracy over whole file: 0.9913401007652283
+---------------------------------------------------
+Fitting on file 5 containing task: task_story_math
+Training loss value at step 0: 8.511180931236595e-05
+Training loss value at step 100: 0.00013755806139670312
+Training loss value at step 200: 6.723177648382261e-05
+Training loss value at step 300: 3.766942609217949e-05
+Training loss value at step 400: 6.139089964563027e-05
+Training loss value at step 500: 4.470248313737102e-05
+Training loss value at step 600: 5.817244164063595e-05
+Training loss value at step 700: 0.00011574551899684593
+Training accuracy over whole file: 0.9917524456977844
+---------------------------------------------------
+Fitting on file 6 containing task: rest
+Training loss value at step 0: 11.571036338806152
+Training loss value at step 100: 0.00036816971260122955
+Training loss value at step 200: 0.0008364992681890726
+Training loss value at step 300: 2.264974000354414e-06
+Training loss value at step 400: 1.728519782773219e-05
+Training loss value at step 500: 0.000563224486541003
+Training loss value at step 600: 0.00011407678539399058
+Training loss value at step 700: 0.00018320789968129247
+Training accuracy over whole file: 0.9914377927780151
+---------------------------------------------------
+Fitting on file 7 containing task: task_working_memory
+Training loss value at step 0: 11.128276824951172
+Training loss value at step 100: 0.00029583368450403214
+Training loss value at step 200: 0.0001045410826918669
+Training loss value at step 300: 0.00015043080202303827
+Training loss value at step 400: 0.0001532914029667154
+Training loss value at step 500: 9.786603914108127e-05
+Training loss value at step 600: 0.00010644822759786621
+Training loss value at step 700: 0.00026770823751576245
+Training accuracy over whole file: 0.9909855723381042
+---------------------------------------------------
+Fitting on file 8 containing task: rest
+Training loss value at step 0: 8.464011192321777
+Training loss value at step 100: 4.172238186583854e-05
+Training loss value at step 200: 0.00013159839727450162
+Training loss value at step 300: 3.969590397900902e-05
+Training loss value at step 400: 0.0001728385395836085
+Training loss value at step 500: 7.748573807475623e-06
+Training loss value at step 600: 7.033323527139146e-06
+Training loss value at step 700: 8.05822346592322e-05
+Training accuracy over whole file: 0.9909924268722534
+---------------------------------------------------
+--------------------------------------------------------------
+Fitting on files 24-32....
+Fitting on file 1 containing task: task_motor
+Training loss value at step 0: 14.769854545593262
+Training loss value at step 100: 0.0001479277852922678
+Training loss value at step 200: 0.00013684290752280504
+Training loss value at step 300: 0.00023493390472140163
+Training loss value at step 400: 0.0002286172821186483
+Training loss value at step 500: 0.0001515035255579278
+Training loss value at step 600: 0.00010287232726113871
+Training loss value at step 700: 0.000192504478036426
+Training accuracy over whole file: 0.9906952977180481
+---------------------------------------------------
+Fitting on file 2 containing task: task_story_math
+Training loss value at step 0: 12.267868995666504
+Training loss value at step 100: 4.994744449504651e-05
+Training loss value at step 200: 2.729855441430118e-05
+Training loss value at step 300: 4.207999518257566e-05
+Training loss value at step 400: 0.00012170527770649642
+Training loss value at step 500: 8.153582894010469e-05
+Training loss value at step 600: 1.0609570381348021e-05
+Training loss value at step 700: 1.6927575416048057e-05
+Training accuracy over whole file: 0.9904210567474365
+---------------------------------------------------
+Fitting on file 3 containing task: rest
+Training loss value at step 0: 9.868578910827637
+Training loss value at step 100: 4.3748852476710454e-05
+Training loss value at step 200: 0.010173607617616653
+Training loss value at step 300: 0.000288087350782007
+Training loss value at step 400: 0.00034195298212580383
+Training loss value at step 500: 3.6954811548639555e-06
+Training loss value at step 600: 0.00025412190007045865
+Training loss value at step 700: 9.298280929215252e-06
+Training accuracy over whole file: 0.9904012680053711
+---------------------------------------------------
+Fitting on file 4 containing task: task_working_memory
+Training loss value at step 0: 13.882499694824219
+Training loss value at step 100: 5.960446742392378e-06
+Training loss value at step 200: 1.537788011773955e-05
+Training loss value at step 300: 8.201262971851975e-05
+Training loss value at step 400: 3.3378546504536644e-06
+Training loss value at step 500: 0.00014983485743869096
+Training loss value at step 600: 4.410734163684538e-06
+Training loss value at step 700: 4.100715523236431e-05
+Training accuracy over whole file: 0.9901119470596313
+---------------------------------------------------
+Fitting on file 5 containing task: task_story_math
+Training loss value at step 0: 12.290153503417969
+Training loss value at step 100: 0.0005062728887423873
+Training loss value at step 200: 3.4450891689630225e-05
+Training loss value at step 300: 0.0006989181856624782
+Training loss value at step 400: 6.8662193370983e-05
+Training loss value at step 500: 0.00020656836568377912
+Training loss value at step 600: 6.55629628454335e-05
+Training loss value at step 700: 5.400034933700226e-05
+Training accuracy over whole file: 0.9898862242698669
+---------------------------------------------------
+Fitting on file 6 containing task: rest
+Training loss value at step 0: 10.030725479125977
+Training loss value at step 100: 8.95221673999913e-05
+Training loss value at step 200: 0.0013496108585968614
+Training loss value at step 300: 0.0011698314920067787
+Training loss value at step 400: 0.0006613928126171231
+Training loss value at step 500: 3.218599158572033e-05
+Training loss value at step 600: 1.1920922133867862e-06
+Training loss value at step 700: 4.136476854910143e-05
+Training accuracy over whole file: 0.9897598028182983
+---------------------------------------------------
+Fitting on file 7 containing task: rest
+Training loss value at step 0: 1.4305104514278355e-06
+Training loss value at step 100: 9.417489309271332e-06
+Training loss value at step 200: 5.960462772236497e-07
+Training loss value at step 300: 1.2993727978027891e-05
+Training loss value at step 400: 1.0967194612021558e-05
+Training loss value at step 500: 9.179073458653875e-06
+Training loss value at step 600: 1.156323378381785e-05
+Training loss value at step 700: 1.9788545614574105e-05
+Training accuracy over whole file: 0.9900901317596436
+---------------------------------------------------
+Fitting on file 8 containing task: task_working_memory
+Training loss value at step 0: 13.575721740722656
+Training loss value at step 100: 1.4185804502631072e-05
+Training loss value at step 200: 7.486063259420916e-05
+Training loss value at step 300: 0.0005198557628318667
+Training loss value at step 400: 0.001256510615348816
+Training loss value at step 500: 0.003121862420812249
+Training loss value at step 600: 2.7656173188006505e-05
+Training loss value at step 700: 2.50339189733495e-06
+Training accuracy over whole file: 0.9899652600288391
+---------------------------------------------------
+--------------------------------------------------------------
+Starting epoch 2
+
+Fitting on files 0-8....
+Fitting on file 1 containing task: task_motor
+Training loss value at step 0: 10.879183769226074
+Training loss value at step 100: 3.862306402879767e-05
+Training loss value at step 200: 2.038458114839159e-05
+Training loss value at step 300: 2.253030106658116e-05
+Training loss value at step 400: 1.0251946150674485e-05
+Training loss value at step 500: 1.7165990357170813e-05
+Training loss value at step 600: 1.3232143828645349e-05
+Training loss value at step 700: 5.602679812000133e-05
+Training accuracy over whole file: 0.9810366630554199
+---------------------------------------------------
+Fitting on file 2 containing task: task_motor
+Training loss value at step 0: 7.033323527139146e-06
+Training loss value at step 100: 7.152531907195225e-06
+Training loss value at step 200: 1.5139465176616795e-05
+Training loss value at step 300: 9.536697689327411e-06
+Training loss value at step 400: 1.0967194612021558e-05
+Training loss value at step 500: 8.702239938429557e-06
+Training loss value at step 600: 5.864924969500862e-05
+Training loss value at step 700: 6.794906312279636e-06
+Training accuracy over whole file: 0.99051833152771
+---------------------------------------------------
+Fitting on file 3 containing task: task_story_math
+Training loss value at step 0: 9.435579299926758
+Training loss value at step 100: 0.0005610798834823072
+Training loss value at step 200: 1.7165990357170813e-05
+Training loss value at step 300: 1.3112935448589269e-05
+Training loss value at step 400: 1.5139465176616795e-05
+Training loss value at step 500: 5.722029527532868e-06
+Training loss value at step 600: 7.152555099310121e-07
+Training loss value at step 700: 0.0009887097403407097
+Training accuracy over whole file: 0.9894648194313049
+---------------------------------------------------
+Fitting on file 4 containing task: rest
+Training loss value at step 0: 12.976787567138672
+Training loss value at step 100: 0.00013064485392533243
+Training loss value at step 200: 3.540453326422721e-05
+Training loss value at step 300: 0.0002797450579237193
+Training loss value at step 400: 0.0031918552704155445
+Training loss value at step 500: 0.0006239851354621351
+Training loss value at step 600: 0.00022218143567442894
+Training loss value at step 700: 8.594620157964528e-05
+Training accuracy over whole file: 0.989570140838623
+---------------------------------------------------
+Fitting on file 5 containing task: task_motor
+Training loss value at step 0: 9.8279390335083
+Training loss value at step 100: 0.0030720680952072144
+Training loss value at step 200: 9.667406266089529e-05
+Training loss value at step 300: 0.00011562632425921038
+Training loss value at step 400: 3.6954195820726454e-05
+Training loss value at step 500: 1.5020257706055418e-05
+Training loss value at step 600: 1.1205610462639015e-05
+Training loss value at step 700: 3.933898824470816e-06
+Training accuracy over whole file: 0.9883691668510437
+---------------------------------------------------
+Fitting on file 6 containing task: rest
+Training loss value at step 0: 3.173084020614624
+Training loss value at step 100: 0.0003259842633269727
+Training loss value at step 200: 0.001341991825029254
+Training loss value at step 300: 0.004087071865797043
+Training loss value at step 400: 0.0011051744222640991
+Training loss value at step 500: 0.01814129762351513
+Training loss value at step 600: 7.450303382938728e-05
+Training loss value at step 700: 4.541770613286644e-05
+Training accuracy over whole file: 0.9884113073348999
+---------------------------------------------------
+Fitting on file 7 containing task: task_working_memory
+Training loss value at step 0: 14.602031707763672
+Training loss value at step 100: 0.00014530557382386178
+Training loss value at step 200: 0.0074300616979599
+Training loss value at step 300: 0.00010907054820563644
+Training loss value at step 400: 1.2993727978027891e-05
+Training loss value at step 500: 2.2053474822314456e-05
+Training loss value at step 600: 4.851700214203447e-05
+Training loss value at step 700: 9.16677454370074e-05
+Training accuracy over whole file: 0.9871771931648254
+---------------------------------------------------
+Fitting on file 8 containing task: task_working_memory
+Training loss value at step 0: 7.414542778860778e-05
+Training loss value at step 100: 0.0015936305280774832
+Training loss value at step 200: 0.0017175221582874656
+Training loss value at step 300: 1.3947389561508317e-05
+Training loss value at step 400: 3.158996332786046e-05
+Training loss value at step 500: 0.00010716341057559475
+Training loss value at step 600: 9.285972191719338e-05
+Training loss value at step 700: 5.173549288883805e-05
+Training accuracy over whole file: 0.9887800216674805
+---------------------------------------------------
+--------------------------------------------------------------
+Fitting on files 8-16....
+Fitting on file 1 containing task: task_working_memory
+Training loss value at step 0: 6.949660019017756e-05
+Training loss value at step 100: 2.13382354559144e-05
+Training loss value at step 200: 1.847726889536716e-05
+Training loss value at step 300: 4.684815212385729e-05
+Training loss value at step 400: 9.297892393078655e-05
+Training loss value at step 500: 8.940656698541716e-06
+Training loss value at step 600: 3.6477376852417365e-05
+Training loss value at step 700: 1.3708974620385561e-05
+Training accuracy over whole file: 0.9900267124176025
+---------------------------------------------------
+Fitting on file 2 containing task: task_story_math
+Training loss value at step 0: 18.888896942138672
+Training loss value at step 100: 0.0018193849828094244
+Training loss value at step 200: 0.0006491222884505987
+Training loss value at step 300: 0.0018209319096058607
+Training loss value at step 400: 0.0010409895330667496
+Training loss value at step 500: 0.00016926287207752466
+Training loss value at step 600: 0.0010058587649837136
+Training loss value at step 700: 0.0006329201860353351
+Training accuracy over whole file: 0.9891276955604553
+---------------------------------------------------
+Fitting on file 3 containing task: task_working_memory
+Training loss value at step 0: 8.688886642456055
+Training loss value at step 100: 0.0006086166249588132
+Training loss value at step 200: 0.0004904259694740176
+Training loss value at step 300: 0.0008903353591449559
+Training loss value at step 400: 0.00031275625224225223
+Training loss value at step 500: 0.00020430385484360158
+Training loss value at step 600: 0.00014554394874721766
+Training loss value at step 700: 0.0002019201492657885
+Training accuracy over whole file: 0.9888518452644348
+---------------------------------------------------
+Fitting on file 4 containing task: task_story_math
+Training loss value at step 0: 9.111781120300293
+Training loss value at step 100: 0.002108614193275571
+Training loss value at step 200: 0.0002673506969586015
+Training loss value at step 300: 0.0002656822034623474
+Training loss value at step 400: 0.00043811736395582557
+Training loss value at step 500: 0.00045563330058939755
+Training loss value at step 600: 0.0005507144378498197
+Training loss value at step 700: 0.00044860312482342124
+Training accuracy over whole file: 0.988095223903656
+---------------------------------------------------
+Fitting on file 5 containing task: task_motor
+Training loss value at step 0: 11.984461784362793
+Training loss value at step 100: 1.9073304429184645e-05
+Training loss value at step 200: 3.4570634852570947e-06
+Training loss value at step 300: 0.0001784403866622597
+Training loss value at step 400: 5.1616290875244886e-05
+Training loss value at step 500: 2.52720492426306e-05
+Training loss value at step 600: 3.0278701160568744e-05
+Training loss value at step 700: 1.6689160474925302e-05
+Training accuracy over whole file: 0.987552285194397
+---------------------------------------------------
+Fitting on file 6 containing task: task_motor
+Training loss value at step 0: 5.960462772236497e-07
+Training loss value at step 100: 1.3828182090946939e-05
+Training loss value at step 200: 1.2159273865108844e-05
+Training loss value at step 300: 1.0132738680113107e-05
+Training loss value at step 400: 3.4570634852570947e-06
+Training loss value at step 500: 4.410734163684538e-06
+Training loss value at step 600: 5.960462772236497e-07
+Training loss value at step 700: 8.940656698541716e-06
+Training accuracy over whole file: 0.9884414076805115
+---------------------------------------------------
+Fitting on file 7 containing task: task_motor
+Training loss value at step 0: 1.1920928244535389e-07
+Training loss value at step 100: 1.4305104514278355e-06
+Training loss value at step 200: 3.576278118089249e-07
+Training loss value at step 300: 3.576278118089249e-07
+Training loss value at step 400: 1.4305104514278355e-06
+Training loss value at step 500: 6.437280717364047e-06
+Training loss value at step 600: 6.079655122448457e-06
+Training loss value at step 700: 6.794906312279636e-06
+Training accuracy over whole file: 0.9892119765281677
+---------------------------------------------------
+Fitting on file 8 containing task: task_story_math
+Training loss value at step 0: 14.0321626663208
+Training loss value at step 100: 0.00019202772818971425
+Training loss value at step 200: 7.593343616463244e-05
+Training loss value at step 300: 0.0009039129945449531
+Training loss value at step 400: 0.00024029705673456192
+Training loss value at step 500: 0.0007115454645827413
+Training loss value at step 600: 0.000205018965061754
+Training loss value at step 700: 2.610649426060263e-05
+Training accuracy over whole file: 0.98893803358078
+---------------------------------------------------
+--------------------------------------------------------------
+Fitting on files 16-24....
+Fitting on file 1 containing task: task_working_memory
+Training loss value at step 0: 11.734716415405273
+Training loss value at step 100: 0.00014232576359063387
+Training loss value at step 200: 0.0001740304142003879
+Training loss value at step 300: 0.0002184867626056075
+Training loss value at step 400: 0.00010013079008786008
+Training loss value at step 500: 9.738924563862383e-05
+Training loss value at step 600: 0.0001264730526600033
+Training loss value at step 700: 0.0004142856632824987
+Training accuracy over whole file: 0.9885476231575012
+---------------------------------------------------
+Fitting on file 2 containing task: task_motor
+Training loss value at step 0: 9.842403411865234
+Training loss value at step 100: 4.017272294731811e-05
+Training loss value at step 200: 5.8887653722194955e-05
+Training loss value at step 300: 0.012737465091049671
+Training loss value at step 400: 0.0035197706893086433
+Training loss value at step 500: 0.002120985882356763
+Training loss value at step 600: 0.002725341124460101
+Training loss value at step 700: 0.00010322991875000298
+Training accuracy over whole file: 0.9881303310394287
+---------------------------------------------------
+Fitting on file 3 containing task: rest
+Training loss value at step 0: 13.738033294677734
+Training loss value at step 100: 0.00013171759201213717
+Training loss value at step 200: 1.1444026313256472e-05
+Training loss value at step 300: 4.8636207793606445e-05
+Training loss value at step 400: 0.004978403449058533
+Training loss value at step 500: 0.0035183453001081944
+Training loss value at step 600: 2.2291887944447808e-05
+Training loss value at step 700: 7.188061863416806e-05
+Training accuracy over whole file: 0.9872912168502808
+---------------------------------------------------
+Fitting on file 4 containing task: task_story_math
+Training loss value at step 0: 6.470249176025391
+Training loss value at step 100: 0.002359227742999792
+Training loss value at step 200: 0.0004650464979931712
+Training loss value at step 300: 0.0002882065309677273
+Training loss value at step 400: 0.0009969270322471857
+Training loss value at step 500: 0.0003164505760651082
+Training loss value at step 600: 0.00020644917094614357
+Training loss value at step 700: 7.462222856702283e-05
+Training accuracy over whole file: 0.9871049523353577
+---------------------------------------------------
+Fitting on file 5 containing task: task_story_math
+Training loss value at step 0: 0.00011729506513802335
+Training loss value at step 100: 0.00037091050762683153
+Training loss value at step 200: 7.795983401592821e-05
+Training loss value at step 300: 0.0001311216183239594
+Training loss value at step 400: 0.00011669908417388797
+Training loss value at step 500: 0.00010382589971413836
+Training loss value at step 600: 0.00024172721896320581
+Training loss value at step 700: 9.226373367710039e-05
+Training accuracy over whole file: 0.9877189993858337
+---------------------------------------------------
+Fitting on file 6 containing task: rest
+Training loss value at step 0: 9.331192016601562
+Training loss value at step 100: 1.0251946150674485e-05
+Training loss value at step 200: 0.04419946298003197
+Training loss value at step 300: 1.5020257706055418e-05
+Training loss value at step 400: 9.738924563862383e-05
+Training loss value at step 500: 0.005834334995597601
+Training loss value at step 600: 0.00024780540843494236
+Training loss value at step 700: 0.0004210777406115085
+Training accuracy over whole file: 0.9874152541160583
+---------------------------------------------------
+Fitting on file 7 containing task: task_working_memory
+Training loss value at step 0: 8.825840950012207
+Training loss value at step 100: 0.0017084777355194092
+Training loss value at step 200: 0.004490292631089687
+Training loss value at step 300: 0.0029250476509332657
+Training loss value at step 400: 0.00012206286191940308
+Training loss value at step 500: 0.001116486731916666
+Training loss value at step 600: 0.0004935238393954933
+Training loss value at step 700: 0.0004624251159839332
+Training accuracy over whole file: 0.9867531657218933
+---------------------------------------------------
+Fitting on file 8 containing task: rest
+Training loss value at step 0: 4.915552616119385
+Training loss value at step 100: 0.0002525725867599249
+Training loss value at step 200: 0.0005614373367279768
+Training loss value at step 300: 8.5588610090781e-05
+Training loss value at step 400: 0.004704359918832779
+Training loss value at step 500: 0.00011991735664196312
+Training loss value at step 600: 0.0023413882590830326
+Training loss value at step 700: 0.0009420248097740114
+Training accuracy over whole file: 0.9867256879806519
+---------------------------------------------------
+--------------------------------------------------------------
+Fitting on files 24-32....
+Fitting on file 1 containing task: task_motor
+Training loss value at step 0: 17.594324111938477
+Training loss value at step 100: 0.003346559125930071
+Training loss value at step 200: 0.0009328543092124164
+Training loss value at step 300: 7.152555099310121e-07
+Training loss value at step 400: 3.576272320060525e-06
+Training loss value at step 500: 7.986990567587782e-06
+Training loss value at step 600: 2.3841855067985307e-07
+Training loss value at step 700: 0.001347468001767993
+Training accuracy over whole file: 0.9860429763793945
+---------------------------------------------------
+Fitting on file 2 containing task: task_story_math
+Training loss value at step 0: 10.87734603881836
+Training loss value at step 100: 0.006380425300449133
+Training loss value at step 200: 0.0022574197500944138
+Training loss value at step 300: 0.00014876213390380144
+Training loss value at step 400: 0.0007834940915927291
+Training loss value at step 500: 0.0003106111544184387
+Training loss value at step 600: 8.260862523457035e-05
+Training loss value at step 700: 0.00042215018766000867
+Training accuracy over whole file: 0.985899031162262
+---------------------------------------------------
+Fitting on file 3 containing task: rest
+Training loss value at step 0: 8.475276947021484
+Training loss value at step 100: 0.00025829317746683955
+Training loss value at step 200: 0.13376224040985107
+Training loss value at step 300: 3.158996332786046e-05
+Training loss value at step 400: 0.01267355214804411
+Training loss value at step 500: 0.002831975230947137
+Training loss value at step 600: 0.0015439982526004314
+Training loss value at step 700: 0.0015068616485223174
+Training accuracy over whole file: 0.9858594536781311
+---------------------------------------------------
+Fitting on file 4 containing task: task_working_memory
+Training loss value at step 0: 8.42324447631836
+Training loss value at step 100: 0.00021991695393808186
+Training loss value at step 200: 0.00014840454969089478
+Training loss value at step 300: 0.0003700763627421111
+Training loss value at step 400: 0.009631946682929993
+Training loss value at step 500: 0.00023100091493688524
+Training loss value at step 600: 0.00040165462996810675
+Training loss value at step 700: 0.0002489972102921456
+Training accuracy over whole file: 0.9856420159339905
+---------------------------------------------------
+Fitting on file 5 containing task: task_story_math
+Training loss value at step 0: 12.02039623260498
+Training loss value at step 100: 0.0009182051289826632
+Training loss value at step 200: 0.0022257810924202204
+Training loss value at step 300: 0.0019186199642717838
+Training loss value at step 400: 0.009843145497143269
+Training loss value at step 500: 0.001440440770238638
+Training loss value at step 600: 0.015177947469055653
+Training loss value at step 700: 0.0017584589077159762
+Training accuracy over whole file: 0.9853524565696716
+---------------------------------------------------
+Fitting on file 6 containing task: rest
+Training loss value at step 0: 5.292936325073242
+Training loss value at step 100: 0.0008853329927660525
+Training loss value at step 200: 0.00017820201173890382
+Training loss value at step 300: 0.00027366707217879593
+Training loss value at step 400: 0.008426232263445854
+Training loss value at step 500: 0.007114552427083254
+Training loss value at step 600: 0.0029030581936240196
+Training loss value at step 700: 0.0017661938909441233
+Training accuracy over whole file: 0.9854192733764648
+---------------------------------------------------
+Fitting on file 7 containing task: rest
+Training loss value at step 0: 1.2636104656849056e-05
+Training loss value at step 100: 3.099436753473128e-06
+Training loss value at step 200: 0.0021777264773845673
+Training loss value at step 300: 0.0012406755704432726
+Training loss value at step 400: 0.0020961235277354717
+Training loss value at step 500: 0.00042429505265317857
+Training loss value at step 600: 0.0005606033373624086
+Training loss value at step 700: 0.0009899006690829992
+Training accuracy over whole file: 0.9858896732330322
+---------------------------------------------------
+Fitting on file 8 containing task: task_working_memory
+Training loss value at step 0: 11.686853408813477
+Training loss value at step 100: 0.0019194527994841337
+Training loss value at step 200: 0.001212695729918778
+Training loss value at step 300: 0.000934045237954706
+Training loss value at step 400: 0.0004720765573438257
+Training loss value at step 500: 0.0016952680889517069
+Training loss value at step 600: 0.0004866131057497114
+Training loss value at step 700: 0.0003343261778354645
+Training accuracy over whole file: 0.9856984615325928
+---------------------------------------------------
+--------------------------------------------------------------
+Starting epoch 3
+
+Fitting on files 0-8....
+Fitting on file 1 containing task: task_motor
+Training loss value at step 0: 11.325254440307617
+Training loss value at step 100: 6.556489552167477e-06
+Training loss value at step 200: 7.867782187531702e-06
+Training loss value at step 300: 7.748303323751315e-05
+Training loss value at step 400: 0.001135300612077117
+Training loss value at step 500: 0.006533689331263304
+Training loss value at step 600: 0.0009162995265796781
+Training loss value at step 700: 0.00360802817158401
+Training accuracy over whole file: 0.9797724485397339
+---------------------------------------------------
+Fitting on file 2 containing task: task_motor
+Training loss value at step 0: 0.0036482936702668667
+Training loss value at step 100: 0.0003861635341309011
+Training loss value at step 200: 4.887569048150908e-06
+Training loss value at step 300: 5.960462772236497e-07
+Training loss value at step 400: 1.9073468138230965e-06
+Training loss value at step 500: 0.0003943857445847243
+Training loss value at step 600: 0.0056930542923510075
+Training loss value at step 700: 7.10462118149735e-05
+Training accuracy over whole file: 0.9898862242698669
+---------------------------------------------------
+Fitting on file 3 containing task: task_story_math
+Training loss value at step 0: 11.392648696899414
+Training loss value at step 100: 0.0037857070565223694
+Training loss value at step 200: 0.0019757291302084923
+Training loss value at step 300: 0.0014552014181390405
+Training loss value at step 400: 0.000608854868914932
+Training loss value at step 500: 0.00039057256071828306
+Training loss value at step 600: 0.00026901919045485556
+Training loss value at step 700: 0.00022098960471339524
+Training accuracy over whole file: 0.9865149855613708
+---------------------------------------------------
+Fitting on file 4 containing task: rest
+Training loss value at step 0: 0.032428521662950516
+Training loss value at step 100: 0.001856866991147399
+Training loss value at step 200: 4.5298504119273275e-05
+Training loss value at step 300: 2.6225699912174605e-05
+Training loss value at step 400: 0.000327652640407905
+Training loss value at step 500: 0.00398615188896656
+Training loss value at step 600: 0.0020714986603707075
+Training loss value at step 700: 0.001660517300479114
+Training accuracy over whole file: 0.987041711807251
+---------------------------------------------------
+Fitting on file 5 containing task: task_motor
+Training loss value at step 0: 9.534937858581543
+Training loss value at step 100: 1.1801649634435307e-05
+Training loss value at step 200: 0.016226956620812416
+Training loss value at step 300: 0.0019664489664137363
+Training loss value at step 400: 0.00010132275929208845
+Training loss value at step 500: 0.0008306628442369401
+Training loss value at step 600: 0.00042250767000950873
+Training loss value at step 700: 1.07287787614041e-05
+Training accuracy over whole file: 0.9860935807228088
+---------------------------------------------------
+Fitting on file 6 containing task: rest
+Training loss value at step 0: 0.18018636107444763
+Training loss value at step 100: 0.0002656822034623474
+Training loss value at step 200: 0.00011872540198964998
+Training loss value at step 300: 1.0847986231965479e-05
+Training loss value at step 400: 0.016311638057231903
+Training loss value at step 500: 0.008694058284163475
+Training loss value at step 600: 0.00385244726203382
+Training loss value at step 700: 0.0018156962469220161
+Training accuracy over whole file: 0.9867256879806519
+---------------------------------------------------
+Fitting on file 7 containing task: task_working_memory
+Training loss value at step 0: 10.233138084411621
+Training loss value at step 100: 0.001334610627964139
+Training loss value at step 200: 0.002095290692523122
+Training loss value at step 300: 0.0020352143328636885
+Training loss value at step 400: 0.0009220162755809724
+Training loss value at step 500: 8.654219709569588e-05
+Training loss value at step 600: 0.00022432672267314047
+Training loss value at step 700: 0.001049682730808854
+Training accuracy over whole file: 0.9846487045288086
+---------------------------------------------------
+Fitting on file 8 containing task: task_working_memory
+Training loss value at step 0: 0.0002915434306487441
+Training loss value at step 100: 0.04121486842632294
+Training loss value at step 200: 0.0001037067049765028
+Training loss value at step 300: 0.00012444675667211413
+Training loss value at step 400: 0.00022075122979003936
+Training loss value at step 500: 3.5523738915799186e-05
+Training loss value at step 600: 4.577531944960356e-05
+Training loss value at step 700: 0.00013493580627255142
+Training accuracy over whole file: 0.9865676164627075
+---------------------------------------------------
+--------------------------------------------------------------
+Fitting on files 8-16....
+Fitting on file 1 containing task: task_working_memory
+Training loss value at step 0: 0.00020668754586949944
+Training loss value at step 100: 0.00020883286197204143
+Training loss value at step 200: 0.0001896439935080707
+Training loss value at step 300: 0.00022718709078617394
+Training loss value at step 400: 0.00016175392374861985
+Training loss value at step 500: 1.3470558769768104e-05
+Training loss value at step 600: 5.8412379075889476e-06
+Training loss value at step 700: 6.9141146923357155e-06
+Training accuracy over whole file: 0.9880601167678833
+---------------------------------------------------
+Fitting on file 2 containing task: task_story_math
+Training loss value at step 0: 13.048975944519043
+Training loss value at step 100: 0.0040699755772948265
+Training loss value at step 200: 0.0023093954659998417
+Training loss value at step 300: 0.0023412692826241255
+Training loss value at step 400: 0.011891547590494156
+Training loss value at step 500: 0.0010946955299004912
+Training loss value at step 600: 0.0006531727267429233
+Training loss value at step 700: 0.0010301527800038457
+Training accuracy over whole file: 0.9867256879806519
+---------------------------------------------------
+Fitting on file 3 containing task: task_working_memory
+Training loss value at step 0: 5.3894219398498535
+Training loss value at step 100: 0.015970058739185333
+Training loss value at step 200: 0.03941746801137924
+Training loss value at step 300: 0.00037353215157054365
+Training loss value at step 400: 0.0055685872212052345
+Training loss value at step 500: 0.0029391921125352383
+Training loss value at step 600: 0.0022507591638714075
+Training loss value at step 700: 0.001887565478682518
+Training accuracy over whole file: 0.9862084984779358
+---------------------------------------------------
+Fitting on file 4 containing task: task_story_math
+Training loss value at step 0: 6.82780647277832
+Training loss value at step 100: 0.006557375658303499
+Training loss value at step 200: 0.0033635490108281374
+Training loss value at step 300: 0.001127441762946546
+Training loss value at step 400: 0.000556314189452678
+Training loss value at step 500: 0.0001839230244513601
+Training loss value at step 600: 0.0003796095261350274
+Training loss value at step 700: 0.0004606377915479243
+Training accuracy over whole file: 0.9855667948722839
+---------------------------------------------------
+Fitting on file 5 containing task: task_motor
+Training loss value at step 0: 12.107877731323242
+Training loss value at step 100: 1.5735502529423684e-05
+Training loss value at step 200: 4.470248313737102e-05
+Training loss value at step 300: 0.007367583457380533
+Training loss value at step 400: 8.284702198579907e-05
+Training loss value at step 500: 3.6954195820726454e-05
+Training loss value at step 600: 1.4543427823809907e-05
+Training loss value at step 700: 1.2159273865108844e-05
+Training accuracy over whole file: 0.9847320914268494
+---------------------------------------------------
+Fitting on file 6 containing task: task_motor
+Training loss value at step 0: 4.768360213347478e-06
+Training loss value at step 100: 0.000679500459227711
+Training loss value at step 200: 1.6093124941107817e-05
+Training loss value at step 300: 3.302042750874534e-05
+Training loss value at step 400: 1.1920922133867862e-06
+Training loss value at step 500: 7.092700980138034e-05
+Training loss value at step 600: 1.3828182090946939e-05
+Training loss value at step 700: 1.6689286894688848e-06
+Training accuracy over whole file: 0.9858226180076599
+---------------------------------------------------
+Fitting on file 7 containing task: task_motor
+Training loss value at step 0: 3.6954811548639555e-06
+Training loss value at step 100: 1.6689286894688848e-06
+Training loss value at step 200: 1.5497195136049413e-06
+Training loss value at step 300: 1.6689286894688848e-06
+Training loss value at step 400: 7.390948667307384e-06
+Training loss value at step 500: 2.264974000354414e-06
+Training loss value at step 600: 6.318072337307967e-06
+Training loss value at step 700: 9.894321920000948e-06
+Training accuracy over whole file: 0.9867678284645081
+---------------------------------------------------
+Fitting on file 8 containing task: task_story_math
+Training loss value at step 0: 13.518571853637695
+Training loss value at step 100: 8.380061626667157e-05
+Training loss value at step 200: 1.537788011773955e-05
+Training loss value at step 300: 0.0005490464391186833
+Training loss value at step 400: 0.00035768310772255063
+Training loss value at step 500: 1.7881377516459906e-06
+Training loss value at step 600: 8.344646857949556e-07
+Training loss value at step 700: 4.529942543740617e-06
+Training accuracy over whole file: 0.986409604549408
+---------------------------------------------------
+--------------------------------------------------------------
+Fitting on files 16-24....
+Fitting on file 1 containing task: task_working_memory
+Training loss value at step 0: 10.162088394165039
+Training loss value at step 100: 0.0038727535866200924
+Training loss value at step 200: 0.00015496007108595222
+Training loss value at step 300: 0.0006761648692190647
+Training loss value at step 400: 0.00013445904187392443
+Training loss value at step 500: 0.00020966715237591416
+Training loss value at step 600: 0.00016258825780823827
+Training loss value at step 700: 0.00022480344341602176
+Training accuracy over whole file: 0.9857960939407349
+---------------------------------------------------
+Fitting on file 2 containing task: task_motor
+Training loss value at step 0: 9.055686950683594
+Training loss value at step 100: 9.285972191719338e-05
+Training loss value at step 200: 1.7404405298293568e-05
+Training loss value at step 300: 1.192147970199585
+Training loss value at step 400: 0.0018631733255460858
+Training loss value at step 500: 0.0003051292151212692
+Training loss value at step 600: 2.2411095415009186e-05
+Training loss value at step 700: 9.775113539944869e-06
+Training accuracy over whole file: 0.985461413860321
+---------------------------------------------------
+Fitting on file 3 containing task: rest
+Training loss value at step 0: 8.057123184204102
+Training loss value at step 100: 0.0012490098597481847
+Training loss value at step 200: 0.001852583372965455
+Training loss value at step 300: 0.00031025364296510816
+Training loss value at step 400: 0.0004978132783435285
+Training loss value at step 500: 4.2437604861333966e-05
+Training loss value at step 600: 0.0026047846768051386
+Training loss value at step 700: 0.008697012439370155
+Training accuracy over whole file: 0.9847627878189087
+---------------------------------------------------
+Fitting on file 4 containing task: task_story_math
+Training loss value at step 0: 18.109039306640625
+Training loss value at step 100: 0.00419071177020669
+Training loss value at step 200: 0.0024672087747603655
+Training loss value at step 300: 0.001831522211432457
+Training loss value at step 400: 0.006942909676581621
+Training loss value at step 500: 5.328513361746445e-05
+Training loss value at step 600: 7.390703103737906e-05
+Training loss value at step 700: 1.156323378381785e-05
+Training accuracy over whole file: 0.9842604398727417
+---------------------------------------------------
+Fitting on file 5 containing task: task_story_math
+Training loss value at step 0: 3.802703940891661e-05
+Training loss value at step 100: 3.0517112463712692e-05
+Training loss value at step 200: 0.0009581027552485466
+Training loss value at step 300: 1.9430925021879375e-05
+Training loss value at step 400: 6.556489552167477e-06
+Training loss value at step 500: 2.3841855067985307e-07
+Training loss value at step 600: 0.0007048744591884315
+Training loss value at step 700: 0.0006325627909973264
+Training accuracy over whole file: 0.9850099086761475
+---------------------------------------------------
+Fitting on file 6 containing task: rest
+Training loss value at step 0: 2.7135300636291504
+Training loss value at step 100: 0.005061194766312838
+Training loss value at step 200: 0.6906699538230896
+Training loss value at step 300: 0.0001641377166379243
+Training loss value at step 400: 0.03022068738937378
+Training loss value at step 500: 0.013795621693134308
+Training loss value at step 600: 0.0114203542470932
+Training loss value at step 700: 0.009500766173005104
+Training accuracy over whole file: 0.9849442839622498
+---------------------------------------------------
+Fitting on file 7 containing task: task_working_memory
+Training loss value at step 0: 7.018771648406982
+Training loss value at step 100: 0.002576129510998726
+Training loss value at step 200: 0.00018499570433050394
+Training loss value at step 300: 8.415821503149346e-05
+Training loss value at step 400: 0.00011252723925281316
+Training loss value at step 500: 0.00013207517622504383
+Training loss value at step 600: 6.0794889577664435e-05
+Training loss value at step 700: 0.00036590558011084795
+Training accuracy over whole file: 0.9844445586204529
+---------------------------------------------------
+Fitting on file 8 containing task: rest
+Training loss value at step 0: 6.653479099273682
+Training loss value at step 100: 0.004418135620653629
+Training loss value at step 200: 0.017554624006152153
+Training loss value at step 300: 0.003365331096574664
+Training loss value at step 400: 0.01052637305110693
+Training loss value at step 500: 0.007631078828126192
+Training loss value at step 600: 8.070142939686775e-05
+Training loss value at step 700: 5.483612312673358e-06
+Training accuracy over whole file: 0.9841445684432983
+---------------------------------------------------
+--------------------------------------------------------------
+Fitting on files 24-32....
+Fitting on file 1 containing task: task_motor
+Training loss value at step 0: 8.477873802185059
+Training loss value at step 100: 0.007513951975852251
+Training loss value at step 200: 0.003121862420812249
+Training loss value at step 300: 0.000460876093711704
+Training loss value at step 400: 9.16677454370074e-05
+Training loss value at step 500: 0.00026008085114881396
+Training loss value at step 600: 0.00015364897262770683
+Training loss value at step 700: 0.00020382710499688983
+Training accuracy over whole file: 0.9838179349899292
+---------------------------------------------------
+Fitting on file 2 containing task: task_story_math
+Training loss value at step 0: 7.244789123535156
+Training loss value at step 100: 0.005692224483937025
+Training loss value at step 200: 0.007596415467560291
+Training loss value at step 300: 0.0022017541341483593
+Training loss value at step 400: 0.0065053836442530155
+Training loss value at step 500: 0.00389828416518867
+Training loss value at step 600: 0.001696696155704558
+Training loss value at step 700: 0.0018510365625843406
+Training accuracy over whole file: 0.9831761121749878
+---------------------------------------------------
+Fitting on file 3 containing task: rest
+Training loss value at step 0: 1.7381103038787842
+Training loss value at step 100: 0.0015313815092667937
+Training loss value at step 200: 0.46234050393104553
+Training loss value at step 300: 0.0005478549865074456
+Training loss value at step 400: 0.0002227773511549458
+Training loss value at step 500: 0.00036614391137845814
+Training loss value at step 600: 3.731181277544238e-05
+Training loss value at step 700: 6.0794889577664435e-05
+Training accuracy over whole file: 0.9830500483512878
+---------------------------------------------------
+Fitting on file 4 containing task: task_working_memory
+Training loss value at step 0: 13.955574989318848
+Training loss value at step 100: 0.005510023329406977
+Training loss value at step 200: 0.00410274276509881
+Training loss value at step 300: 0.0019386084750294685
+Training loss value at step 400: 0.0036171742249280214
+Training loss value at step 500: 0.0007842087652534246
+Training loss value at step 600: 0.000952386180870235
+Training loss value at step 700: 0.00017653337272349745
+Training accuracy over whole file: 0.9827523827552795
+---------------------------------------------------
+Fitting on file 5 containing task: task_story_math
+Training loss value at step 0: 9.10053539276123
+Training loss value at step 100: 0.002028790069743991
+Training loss value at step 200: 0.003986270632594824
+Training loss value at step 300: 0.004468218889087439
+Training loss value at step 400: 0.002186766592785716
+Training loss value at step 500: 0.00032181330607272685
+Training loss value at step 600: 0.19360414147377014
+Training loss value at step 700: 0.0009470268851146102
+Training accuracy over whole file: 0.9825624227523804
+---------------------------------------------------
+Fitting on file 6 containing task: rest
+Training loss value at step 0: 0.7801170349121094
+Training loss value at step 100: 0.0017390617867931724
+Training loss value at step 200: 0.0006802152493037283
+Training loss value at step 300: 4.708655978902243e-05
+Training loss value at step 400: 0.00013386306818574667
+Training loss value at step 500: 8.356221951544285e-05
+Training loss value at step 600: 2.3841855067985307e-07
+Training loss value at step 700: 2.3841855067985307e-07
+Training accuracy over whole file: 0.982722282409668
+---------------------------------------------------
+Fitting on file 7 containing task: rest
+Training loss value at step 0: 5.006777428206988e-06
+Training loss value at step 100: 4.887569048150908e-06
+Training loss value at step 200: 5.3881147323409095e-05
+Training loss value at step 300: 2.407998726994265e-05
+Training loss value at step 400: 2.5510462364763953e-05
+Training loss value at step 500: 0.0013690156629309058
+Training loss value at step 600: 0.0
+Training loss value at step 700: 2.50339189733495e-06
+Training accuracy over whole file: 0.9832796454429626
+---------------------------------------------------
+Fitting on file 8 containing task: task_working_memory
+Training loss value at step 0: 10.70960807800293
+Training loss value at step 100: 0.004603264853358269
+Training loss value at step 200: 0.003529986599460244
+Training loss value at step 300: 0.0006043276516720653
+Training loss value at step 400: 0.0001267114421352744
+Training loss value at step 500: 0.0003813969960901886
+Training loss value at step 600: 0.001178523525595665
+Training loss value at step 700: 0.00011395759065635502
+Training accuracy over whole file: 0.9830515384674072
+---------------------------------------------------
+--------------------------------------------------------------
+Starting epoch 4
+
+Fitting on files 0-8....
+Fitting on file 1 containing task: task_motor
+Training loss value at step 0: 9.931243896484375
+Training loss value at step 100: 0.00021419614495243877
+Training loss value at step 200: 0.0005479741375893354
+Training loss value at step 300: 2.0146166207268834e-05
+Training loss value at step 400: 2.50339189733495e-06
+Training loss value at step 500: 0.0007594323833473027
+Training loss value at step 600: 0.0631243884563446
+Training loss value at step 700: 0.0022806129418313503
+Training accuracy over whole file: 0.9810366630554199
+---------------------------------------------------
+Fitting on file 2 containing task: task_motor
+Training loss value at step 0: 0.04042305052280426
+Training loss value at step 100: 5.960462772236497e-07
+Training loss value at step 200: 2.50339189733495e-06
+Training loss value at step 300: 1.7881377516459906e-06
+Training loss value at step 400: 2.3841855067985307e-07
+Training loss value at step 500: 2.50339189733495e-06
+Training loss value at step 600: 0.02164759859442711
+Training loss value at step 700: 0.000460876093711704
+Training accuracy over whole file: 0.99051833152771
+---------------------------------------------------
+Fitting on file 3 containing task: task_story_math
+Training loss value at step 0: 7.509437561035156
+Training loss value at step 100: 0.01107992883771658
+Training loss value at step 200: 0.06065693497657776
+Training loss value at step 300: 0.003740933956578374
+Training loss value at step 400: 0.0005104430601932108
+Training loss value at step 500: 0.00014900050882715732
+Training loss value at step 600: 5.030505417380482e-05
+Training loss value at step 700: 1.966933996300213e-05
+Training accuracy over whole file: 0.9860935807228088
+---------------------------------------------------
+Fitting on file 4 containing task: rest
+Training loss value at step 0: 1.7637805938720703
+Training loss value at step 100: 0.0015616138698533177
+Training loss value at step 200: 0.00048232366680167615
+Training loss value at step 300: 3.397406908334233e-05
+Training loss value at step 400: 5.8053239627042785e-05
+Training loss value at step 500: 0.00028713393840007484
+Training loss value at step 600: 0.0004769618099089712
+Training loss value at step 700: 9.941560711013153e-05
+Training accuracy over whole file: 0.9845132827758789
+---------------------------------------------------
+Fitting on file 5 containing task: task_motor
+Training loss value at step 0: 9.326152801513672
+Training loss value at step 100: 2.658331868587993e-05
+Training loss value at step 200: 0.064116932451725
+Training loss value at step 300: 0.016183441504836082
+Training loss value at step 400: 0.00810843612998724
+Training loss value at step 500: 0.0016424274072051048
+Training loss value at step 600: 3.576278118089249e-07
+Training loss value at step 700: 2.3841855067985307e-07
+Training accuracy over whole file: 0.9828065633773804
+---------------------------------------------------
+Fitting on file 6 containing task: rest
+Training loss value at step 0: 0.02235475182533264
+Training loss value at step 100: 0.0010145523119717836
+Training loss value at step 200: 7.807903602952138e-05
+Training loss value at step 300: 0.0029106654692441225
+Training loss value at step 400: 2.3841855067985307e-07
+Training loss value at step 500: 0.0004151197790633887
+Training loss value at step 600: 0.012621876783668995
+Training loss value at step 700: 0.0007571690948680043
+Training accuracy over whole file: 0.982511579990387
+---------------------------------------------------
+Fitting on file 7 containing task: task_working_memory
+Training loss value at step 0: 16.947338104248047
+Training loss value at step 100: 0.00037305548903532326
+Training loss value at step 200: 5.6980417866725475e-05
+Training loss value at step 300: 0.0003270567976869643
+Training loss value at step 400: 8.713819261174649e-05
+Training loss value at step 500: 0.00023052419419400394
+Training loss value at step 600: 8.821448318485636e-06
+Training loss value at step 700: 1.7881377516459906e-06
+Training accuracy over whole file: 0.9785082340240479
+---------------------------------------------------
+Fitting on file 8 containing task: task_working_memory
+Training loss value at step 0: 3.933898824470816e-06
+Training loss value at step 100: 2.5510462364763953e-05
+Training loss value at step 200: 0.0018473479431122541
+Training loss value at step 300: 1.2278481335670222e-05
+Training loss value at step 400: 1.3589766240329482e-05
+Training loss value at step 500: 1.5497195136049413e-06
+Training loss value at step 600: 4.386805812828243e-05
+Training loss value at step 700: 0.00134151556994766
+Training accuracy over whole file: 0.9811946749687195
+---------------------------------------------------
+--------------------------------------------------------------
+Fitting on files 8-16....
+Fitting on file 1 containing task: task_working_memory
+Training loss value at step 0: 3.6954811548639555e-06
+Training loss value at step 100: 9.65590606938349e-06
+Training loss value at step 200: 6.151010165922344e-05
+Training loss value at step 300: 9.298280929215252e-06
+Training loss value at step 400: 1.1920922133867862e-06
+Training loss value at step 500: 4.768370445162873e-07
+Training loss value at step 600: 2.5510462364763953e-05
+Training loss value at step 700: 3.576278118089249e-07
+Training accuracy over whole file: 0.9832841753959656
+---------------------------------------------------
+Fitting on file 2 containing task: task_story_math
+Training loss value at step 0: 23.03086280822754
+Training loss value at step 100: 2.312633478140924e-05
+Training loss value at step 200: 1.1324817933200393e-05
+Training loss value at step 300: 7.152555099310121e-07
+Training loss value at step 400: 4.768370445162873e-07
+Training loss value at step 500: 6.437280717364047e-06
+Training loss value at step 600: 7.152301259338856e-05
+Training loss value at step 700: 5.030505417380482e-05
+Training accuracy over whole file: 0.9821744561195374
+---------------------------------------------------
+Fitting on file 3 containing task: task_working_memory
+Training loss value at step 0: 15.064081192016602
+Training loss value at step 100: 7.533743337262422e-05
+Training loss value at step 200: 0.0035056346096098423
+Training loss value at step 300: 0.0001292145170737058
+Training loss value at step 400: 0.002018558792769909
+Training loss value at step 500: 1.07287787614041e-05
+Training loss value at step 600: 3.45700973412022e-05
+Training loss value at step 700: 7.629365427419543e-06
+Training accuracy over whole file: 0.9814963936805725
+---------------------------------------------------
+Fitting on file 4 containing task: task_story_math
+Training loss value at step 0: 14.545172691345215
+Training loss value at step 100: 0.002448776736855507
+Training loss value at step 200: 0.0030497252009809017
+Training loss value at step 300: 0.0027222500648349524
+Training loss value at step 400: 0.033215392380952835
+Training loss value at step 500: 0.0011136289685964584
+Training loss value at step 600: 0.0005611990345641971
+Training loss value at step 700: 0.00043752157944254577
+Training accuracy over whole file: 0.980931282043457
+---------------------------------------------------
+Fitting on file 5 containing task: task_motor
+Training loss value at step 0: 12.970295906066895
+Training loss value at step 100: 0.0006434039096347988
+Training loss value at step 200: 0.0077829682268202305
+Training loss value at step 300: 0.06918085366487503
+Training loss value at step 400: 0.010657536797225475
+Training loss value at step 500: 0.0011317284079268575
+Training loss value at step 600: 0.0031747438479214907
+Training loss value at step 700: 0.0003398079425096512
+Training accuracy over whole file: 0.9803559184074402
+---------------------------------------------------
+Fitting on file 6 containing task: task_motor
+Training loss value at step 0: 0.00296379579231143
+Training loss value at step 100: 4.637133679352701e-05
+Training loss value at step 200: 0.0002774807217065245
+Training loss value at step 300: 8.22540732769994e-06
+Training loss value at step 400: 3.4689302992774174e-05
+Training loss value at step 500: 9.667406266089529e-05
+Training loss value at step 600: 4.434487345861271e-05
+Training loss value at step 700: 0.0002146728802472353
+Training accuracy over whole file: 0.9817590713500977
+---------------------------------------------------
+Fitting on file 7 containing task: task_motor
+Training loss value at step 0: 0.00017498392844572663
+Training loss value at step 100: 2.658331868587993e-05
+Training loss value at step 200: 2.5629668016335927e-05
+Training loss value at step 300: 2.5629668016335927e-05
+Training loss value at step 400: 8.40390202938579e-05
+Training loss value at step 500: 7.557583012385294e-05
+Training loss value at step 600: 0.002527734963223338
+Training loss value at step 700: 0.0009538153535686433
+Training accuracy over whole file: 0.9829751253128052
+---------------------------------------------------
+Fitting on file 8 containing task: task_story_math
+Training loss value at step 0: 11.839188575744629
+Training loss value at step 100: 0.00024971229140646756
+Training loss value at step 200: 0.0016434985445812345
+Training loss value at step 300: 0.0006262486567720771
+Training loss value at step 400: 0.0066903638653457165
+Training loss value at step 500: 0.00015066919149830937
+Training loss value at step 600: 0.0013936578761786222
+Training loss value at step 700: 0.0001429217227268964
+Training accuracy over whole file: 0.9827749729156494
+---------------------------------------------------
+--------------------------------------------------------------
+Fitting on files 16-24....
+Fitting on file 1 containing task: task_working_memory
+Training loss value at step 0: 8.706843376159668
+Training loss value at step 100: 0.0009788251481950283
+Training loss value at step 200: 0.0050646341405808926
+Training loss value at step 300: 0.0018077236600220203
+Training loss value at step 400: 0.0005498804384842515
+Training loss value at step 500: 0.00011717586312443018
+Training loss value at step 600: 0.000726316764485091
+Training loss value at step 700: 0.0011556621175259352
+Training accuracy over whole file: 0.9825983643531799
+---------------------------------------------------
+Fitting on file 2 containing task: task_motor
+Training loss value at step 0: 8.233235359191895
+Training loss value at step 100: 0.0174003466963768
+Training loss value at step 200: 3.93382906622719e-05
+Training loss value at step 300: 0.0023575627710670233
+Training loss value at step 400: 0.0006171943969093263
+Training loss value at step 500: 2.169585604860913e-05
+Training loss value at step 600: 0.00048339602653868496
+Training loss value at step 700: 0.0003810394846368581
+Training accuracy over whole file: 0.9825817942619324
+---------------------------------------------------
+Fitting on file 3 containing task: rest
+Training loss value at step 0: 12.77980899810791
+Training loss value at step 100: 0.004140258301049471
+Training loss value at step 200: 0.00206590723246336
+Training loss value at step 300: 0.0002628219372127205
+Training loss value at step 400: 0.007438817992806435
+Training loss value at step 500: 3.099436753473128e-06
+Training loss value at step 600: 3.2186455882765586e-06
+Training loss value at step 700: 9.536738616588991e-07
+Training accuracy over whole file: 0.9824339747428894
+---------------------------------------------------
+Fitting on file 4 containing task: task_story_math
+Training loss value at step 0: 15.36340618133545
+Training loss value at step 100: 0.002062933286651969
+Training loss value at step 200: 0.0005041282274760306
+Training loss value at step 300: 0.0010455148294568062
+Training loss value at step 400: 0.0011793570592999458
+Training loss value at step 500: 0.00031835734262131155
+Training loss value at step 600: 0.0003234816831536591
+Training loss value at step 700: 0.00044216870446689427
+Training accuracy over whole file: 0.9821744561195374
+---------------------------------------------------
+Fitting on file 5 containing task: task_story_math
+Training loss value at step 0: 0.0007674132939428091
+Training loss value at step 100: 0.0009585791267454624
+Training loss value at step 200: 0.0001656871900195256
+Training loss value at step 300: 0.00017271934484597296
+Training loss value at step 400: 0.00015209948469419032
+Training loss value at step 500: 2.3841574147809297e-05
+Training loss value at step 600: 0.0001541257370263338
+Training loss value at step 700: 0.00020811776630580425
+Training accuracy over whole file: 0.9830232858657837
+---------------------------------------------------
+Fitting on file 6 containing task: rest
+Training loss value at step 0: 6.454802513122559
+Training loss value at step 100: 0.003821690334007144
+Training loss value at step 200: 0.012229105457663536
+Training loss value at step 300: 0.001166259404271841
+Training loss value at step 400: 0.0013894913718104362
+Training loss value at step 500: 4.9232225137529895e-05
+Training loss value at step 600: 1.9073468138230965e-06
+Training loss value at step 700: 1.5497195136049413e-06
+Training accuracy over whole file: 0.9828755259513855
+---------------------------------------------------
+Fitting on file 7 containing task: task_working_memory
+Training loss value at step 0: 9.568882942199707
+Training loss value at step 100: 0.001327705685980618
+Training loss value at step 200: 5.245195097813848e-06
+Training loss value at step 300: 0.0011810240102931857
+Training loss value at step 400: 1.0371154530730564e-05
+Training loss value at step 500: 0.0002910667099058628
+Training loss value at step 600: 0.0002040654799202457
+Training loss value at step 700: 0.0009660820942372084
+Training accuracy over whole file: 0.9820809960365295
+---------------------------------------------------
+Fitting on file 8 containing task: rest
+Training loss value at step 0: 1.3796100616455078
+Training loss value at step 100: 0.004084459971636534
+Training loss value at step 200: 5.2569914259947836e-05
+Training loss value at step 300: 0.0023514972999691963
+Training loss value at step 400: 0.00030501006403937936
+Training loss value at step 500: 1.0013530300057027e-05
+Training loss value at step 600: 5.7338023907504976e-05
+Training loss value at step 700: 6.282132380874828e-05
+Training accuracy over whole file: 0.981879472732544
+---------------------------------------------------
+--------------------------------------------------------------
+Fitting on files 24-32....
+Fitting on file 1 containing task: task_motor
+Training loss value at step 0: 9.761970520019531
+Training loss value at step 100: 0.0030081281438469887
+Training loss value at step 200: 0.0002885640424210578
+Training loss value at step 300: 0.00021169328829273582
+Training loss value at step 400: 2.4199192921514623e-05
+Training loss value at step 500: 8.165503095369786e-05
+Training loss value at step 600: 0.00019143179815728217
+Training loss value at step 700: 0.002512514591217041
+Training accuracy over whole file: 0.9813400506973267
+---------------------------------------------------
+Fitting on file 2 containing task: task_story_math
+Training loss value at step 0: 4.75770378112793
+Training loss value at step 100: 0.00316226645372808
+Training loss value at step 200: 0.0016288596671074629
+Training loss value at step 300: 0.0012050755321979523
+Training loss value at step 400: 0.0017016944475471973
+Training loss value at step 500: 0.0017964191501960158
+Training loss value at step 600: 0.0008744944934733212
+Training loss value at step 700: 0.000704278820194304
+Training accuracy over whole file: 0.9806963205337524
+---------------------------------------------------
+Fitting on file 3 containing task: rest
+Training loss value at step 0: 0.3168136179447174
+Training loss value at step 100: 0.0017748808022588491
+Training loss value at step 200: 0.0007134514744393528
+Training loss value at step 300: 0.002591111231595278
+Training loss value at step 400: 0.0009701313101686537
+Training loss value at step 500: 6.282132380874828e-05
+Training loss value at step 600: 5.519237674889155e-05
+Training loss value at step 700: 4.2437604861333966e-05
+Training accuracy over whole file: 0.9808961749076843
+---------------------------------------------------
+Fitting on file 4 containing task: task_working_memory
+Training loss value at step 0: 12.322412490844727
+Training loss value at step 100: 0.0036241819616407156
+Training loss value at step 200: 0.0004020121123176068
+Training loss value at step 300: 0.00037496211007237434
+Training loss value at step 400: 0.0015986294019967318
+Training loss value at step 500: 4.970903682988137e-05
+Training loss value at step 600: 0.00011002412065863609
+Training loss value at step 700: 1.6927575416048057e-05
+Training accuracy over whole file: 0.980720579624176
+---------------------------------------------------
+Fitting on file 5 containing task: task_story_math
+Training loss value at step 0: 6.970807075500488
+Training loss value at step 100: 0.0007662221323698759
+Training loss value at step 200: 0.0016279076226055622
+Training loss value at step 300: 0.024270907044410706
+Training loss value at step 400: 0.00014041867689229548
+Training loss value at step 500: 1.847726889536716e-05
+Training loss value at step 600: 0.0009031984372995794
+Training loss value at step 700: 0.0016185053391382098
+Training accuracy over whole file: 0.9806443452835083
+---------------------------------------------------
+Fitting on file 6 containing task: rest
+Training loss value at step 0: 0.059711482375860214
+Training loss value at step 100: 0.0022845377679914236
+Training loss value at step 200: 0.0012192443246021867
+Training loss value at step 300: 0.00016926287207752466
+Training loss value at step 400: 0.001622551935724914
+Training loss value at step 500: 0.011479751206934452
+Training loss value at step 600: 1.168244216387393e-05
+Training loss value at step 700: 9.894321920000948e-06
+Training accuracy over whole file: 0.9805731177330017
+---------------------------------------------------
+Fitting on file 7 containing task: rest
+Training loss value at step 0: 2.3841830625315197e-06
+Training loss value at step 100: 2.0265558760002023e-06
+Training loss value at step 200: 8.344646857949556e-07
+Training loss value at step 300: 2.002696055569686e-05
+Training loss value at step 400: 0.00010990492592100054
+Training loss value at step 500: 0.00039772229501977563
+Training loss value at step 600: 2.50339189733495e-06
+Training loss value at step 700: 0.0002848696312867105
+Training accuracy over whole file: 0.9811998009681702
+---------------------------------------------------
+Fitting on file 8 containing task: task_working_memory
+Training loss value at step 0: 11.7484769821167
+Training loss value at step 100: 0.00041631137719377875
+Training loss value at step 200: 2.90866428258596e-05
+Training loss value at step 300: 0.01528314407914877
+Training loss value at step 400: 3.93382906622719e-05
+Training loss value at step 500: 0.005438532680273056
+Training loss value at step 600: 0.00014530557382386178
+Training loss value at step 700: 7.867782187531702e-06
+Training accuracy over whole file: 0.9809576272964478
+---------------------------------------------------
+--------------------------------------------------------------
+Starting epoch 5
+
+Fitting on files 0-8....
+Fitting on file 1 containing task: task_motor
+Training loss value at step 0: 12.856220245361328
+Training loss value at step 100: 0.0001546025014249608
+Training loss value at step 200: 0.0001472126314183697
+Training loss value at step 300: 0.0001456631434848532
+Training loss value at step 400: 0.003582014935091138
+Training loss value at step 500: 3.504691630951129e-05
+Training loss value at step 600: 9.226373367710039e-05
+Training loss value at step 700: 0.00013541258522309363
+Training accuracy over whole file: 0.9721871018409729
+---------------------------------------------------
+Fitting on file 2 containing task: task_motor
+Training loss value at step 0: 0.00010132275929208845
+Training loss value at step 100: 0.002375164069235325
+Training loss value at step 200: 2.658331868587993e-05
+Training loss value at step 300: 1.2278481335670222e-05
+Training loss value at step 400: 0.00021395778458099812
+Training loss value at step 500: 0.00032574593205936253
+Training loss value at step 600: 0.00012909532233607024
+Training loss value at step 700: 6.437094270950183e-05
+Training accuracy over whole file: 0.9860935807228088
+---------------------------------------------------
+Fitting on file 3 containing task: task_story_math
+Training loss value at step 0: 8.132678985595703
+Training loss value at step 100: 0.0004239375703036785
+Training loss value at step 200: 0.17195174098014832
+Training loss value at step 300: 0.012295519933104515
+Training loss value at step 400: 0.002186171943321824
+Training loss value at step 500: 0.000633992429357022
+Training loss value at step 600: 0.0005603650351986289
+Training loss value at step 700: 0.0004960260121151805
+Training accuracy over whole file: 0.98314368724823
+---------------------------------------------------
+Fitting on file 4 containing task: rest
+Training loss value at step 0: 0.0198118407279253
+Training loss value at step 100: 0.0030999958980828524
+Training loss value at step 200: 0.00013064485392533243
+Training loss value at step 300: 0.0003177614707965404
+Training loss value at step 400: 2.9205850296420977e-05
+Training loss value at step 500: 0.0017970141489058733
+Training loss value at step 600: 5.364403477869928e-06
+Training loss value at step 700: 1.1444026313256472e-05
+Training accuracy over whole file: 0.9826169610023499
+---------------------------------------------------
+Fitting on file 5 containing task: task_motor
+Training loss value at step 0: 4.218048095703125
+Training loss value at step 100: 0.005755163263529539
+Training loss value at step 200: 0.07401592284440994
+Training loss value at step 300: 0.03528372943401337
+Training loss value at step 400: 5.7338023907504976e-05
+Training loss value at step 500: 8.523101132595912e-05
+Training loss value at step 600: 0.0018725732807070017
+Training loss value at step 700: 0.00025042734341695905
+Training accuracy over whole file: 0.9820480346679688
+---------------------------------------------------
+Fitting on file 6 containing task: rest
+Training loss value at step 0: 0.16526907682418823
+Training loss value at step 100: 0.0037810755893588066
+Training loss value at step 200: 0.0016089839627966285
+Training loss value at step 300: 2.4914430468925275e-05
+Training loss value at step 400: 9.119095193454996e-05
+Training loss value at step 500: 0.0021354984492063522
+Training loss value at step 600: 0.007227939087897539
+Training loss value at step 700: 0.001086359960027039
+Training accuracy over whole file: 0.982090175151825
+---------------------------------------------------
+Fitting on file 7 containing task: task_working_memory
+Training loss value at step 0: 11.542030334472656
+Training loss value at step 100: 0.0002325502864550799
+Training loss value at step 200: 0.0005547653418034315
+Training loss value at step 300: 0.001794277224689722
+Training loss value at step 400: 6.007967749610543e-05
+Training loss value at step 500: 6.174850568640977e-05
+Training loss value at step 600: 4.410734163684538e-06
+Training loss value at step 700: 0.0002227773511549458
+Training accuracy over whole file: 0.9801336526870728
+---------------------------------------------------
+Fitting on file 8 containing task: task_working_memory
+Training loss value at step 0: 0.00017379203927703202
+Training loss value at step 100: 3.099436753473128e-06
+Training loss value at step 200: 0.0014793653972446918
+Training loss value at step 300: 5.006777428206988e-06
+Training loss value at step 400: 1.1444026313256472e-05
+Training loss value at step 500: 2.50339189733495e-06
+Training loss value at step 600: 0.00019774865359067917
+Training loss value at step 700: 2.3841830625315197e-06
+Training accuracy over whole file: 0.9826169610023499
+---------------------------------------------------
+--------------------------------------------------------------
+Fitting on files 8-16....
+Fitting on file 1 containing task: task_working_memory
+Training loss value at step 0: 6.687417771900073e-05
+Training loss value at step 100: 6.913899414939806e-05
+Training loss value at step 200: 9.536738616588991e-07
+Training loss value at step 300: 3.4570634852570947e-06
+Training loss value at step 400: 1.1920928244535389e-07
+Training loss value at step 500: 2.2411095415009186e-05
+Training loss value at step 600: 3.576278118089249e-07
+Training loss value at step 700: 4.768370445162873e-07
+Training accuracy over whole file: 0.9845483899116516
+---------------------------------------------------
+Fitting on file 2 containing task: task_story_math
+Training loss value at step 0: 7.480914115905762
+Training loss value at step 100: 8.034383063204587e-05
+Training loss value at step 200: 0.6730690002441406
+Training loss value at step 300: 5.4238757002167404e-05
+Training loss value at step 400: 0.00013314791431184858
+Training loss value at step 500: 5.400034933700226e-05
+Training loss value at step 600: 4.8874615458771586e-05
+Training loss value at step 700: 0.00013433984713628888
+Training accuracy over whole file: 0.983565092086792
+---------------------------------------------------
+Fitting on file 3 containing task: task_working_memory
+Training loss value at step 0: 7.984155178070068
+Training loss value at step 100: 7.772143726469949e-05
+Training loss value at step 200: 0.0006210067658685148
+Training loss value at step 300: 5.400034933700226e-05
+Training loss value at step 400: 2.0265558760002023e-06
+Training loss value at step 500: 6.282132380874828e-05
+Training loss value at step 600: 5.495397272170521e-05
+Training loss value at step 700: 2.3841855067985307e-07
+Training accuracy over whole file: 0.9826456904411316
+---------------------------------------------------
+Fitting on file 4 containing task: task_story_math
+Training loss value at step 0: 7.957414627075195
+Training loss value at step 100: 0.0030629171524196863
+Training loss value at step 200: 0.0018882793374359608
+Training loss value at step 300: 0.0036954462993890047
+Training loss value at step 400: 0.031116655096411705
+Training loss value at step 500: 0.00022766382608097047
+Training loss value at step 600: 0.0009893052047118545
+Training loss value at step 700: 0.0007039214833639562
+Training accuracy over whole file: 0.9815634489059448
+---------------------------------------------------
+Fitting on file 5 containing task: task_motor
+Training loss value at step 0: 12.476181030273438
+Training loss value at step 100: 0.0018364008283242583
+Training loss value at step 200: 0.016758259385824203
+Training loss value at step 300: 0.015801453962922096
+Training loss value at step 400: 0.055637843906879425
+Training loss value at step 500: 0.0007377525325864553
+Training loss value at step 600: 0.002116346498951316
+Training loss value at step 700: 0.0041772969998419285
+Training accuracy over whole file: 0.9811339378356934
+---------------------------------------------------
+Fitting on file 6 containing task: task_motor
+Training loss value at step 0: 0.0017615529941394925
+Training loss value at step 100: 0.0003405229654163122
+Training loss value at step 200: 0.0003570872650016099
+Training loss value at step 300: 0.0001481661747675389
+Training loss value at step 400: 0.00014041867689229548
+Training loss value at step 500: 0.0001113352773245424
+Training loss value at step 600: 0.00012051333033014089
+Training loss value at step 700: 0.0002637753786984831
+Training accuracy over whole file: 0.9824814796447754
+---------------------------------------------------
+Fitting on file 7 containing task: task_motor
+Training loss value at step 0: 6.937739817658439e-05
+Training loss value at step 100: 0.00017975145601667464
+Training loss value at step 200: 6.568216485902667e-05
+Training loss value at step 300: 8.177422569133341e-05
+Training loss value at step 400: 6.5205356804654e-05
+Training loss value at step 500: 0.00010656742961145937
+Training loss value at step 600: 0.004751818720251322
+Training loss value at step 700: 0.0008691347320564091
+Training accuracy over whole file: 0.9836493730545044
+---------------------------------------------------
+Fitting on file 8 containing task: task_story_math
+Training loss value at step 0: 11.5003080368042
+Training loss value at step 100: 0.004956814926117659
+Training loss value at step 200: 0.002157385926693678
+Training loss value at step 300: 0.002753873122856021
+Training loss value at step 400: 0.0016799159348011017
+Training loss value at step 500: 0.0010001424234360456
+Training loss value at step 600: 0.0014447261346504092
+Training loss value at step 700: 0.002507282653823495
+Training accuracy over whole file: 0.9830909967422485
+---------------------------------------------------
+--------------------------------------------------------------
+Fitting on files 16-24....
+Fitting on file 1 containing task: task_working_memory
+Training loss value at step 0: 9.484895706176758
+Training loss value at step 100: 0.00034505134681239724
+Training loss value at step 200: 0.0011555430246517062
+Training loss value at step 300: 4.029192859889008e-05
+Training loss value at step 400: 0.0003108495147898793
+Training loss value at step 500: 1.6331539882230572e-05
+Training loss value at step 600: 8.797258487902582e-05
+Training loss value at step 700: 0.01614074409008026
+Training accuracy over whole file: 0.9828957915306091
+---------------------------------------------------
+Fitting on file 2 containing task: task_motor
+Training loss value at step 0: 8.948066711425781
+Training loss value at step 100: 0.1853516697883606
+Training loss value at step 200: 0.0008954567601904273
+Training loss value at step 300: 0.005194026045501232
+Training loss value at step 400: 0.0007521660882048309
+Training loss value at step 500: 0.003611353924497962
+Training loss value at step 600: 0.0007856381707824767
+Training loss value at step 700: 0.00030012393835932016
+Training accuracy over whole file: 0.9828627705574036
+---------------------------------------------------
+Fitting on file 3 containing task: rest
+Training loss value at step 0: 10.630002975463867
+Training loss value at step 100: 0.0016208856832236052
+Training loss value at step 200: 0.0012480573495849967
+Training loss value at step 300: 0.00034671969478949904
+Training loss value at step 400: 0.00040618274942971766
+Training loss value at step 500: 0.0017347777029499412
+Training loss value at step 600: 0.0004080893413629383
+Training loss value at step 700: 0.011029704473912716
+Training accuracy over whole file: 0.9825670123100281
+---------------------------------------------------
+Fitting on file 4 containing task: task_story_math
+Training loss value at step 0: 8.653646469116211
+Training loss value at step 100: 0.011203593574464321
+Training loss value at step 200: 0.0003819928097072989
+Training loss value at step 300: 0.0005638201837427914
+Training loss value at step 400: 0.0013888961402699351
+Training loss value at step 500: 0.00040356122190132737
+Training loss value at step 600: 0.0006238659843802452
+Training loss value at step 700: 0.00039176418795250356
+Training accuracy over whole file: 0.9821744561195374
+---------------------------------------------------
+Fitting on file 5 containing task: task_story_math
+Training loss value at step 0: 0.001157448161393404
+Training loss value at step 100: 0.0002960720448754728
+Training loss value at step 200: 0.0015969631494954228
+Training loss value at step 300: 0.00027640812913887203
+Training loss value at step 400: 0.0001658063702052459
+Training loss value at step 500: 0.0011188682401552796
+Training loss value at step 600: 0.00010168035078095272
+Training loss value at step 700: 0.00017855956684798002
+Training accuracy over whole file: 0.9830232858657837
+---------------------------------------------------
+Fitting on file 6 containing task: rest
+Training loss value at step 0: 5.60618782043457
+Training loss value at step 100: 0.003079555230215192
+Training loss value at step 200: 0.006277367472648621
+Training loss value at step 300: 0.0038662224542349577
+Training loss value at step 400: 0.031217070296406746
+Training loss value at step 500: 0.00014482879487331957
+Training loss value at step 600: 5.483612312673358e-06
+Training loss value at step 700: 2.8371408916427754e-05
+Training accuracy over whole file: 0.982932984828949
+---------------------------------------------------
+Fitting on file 7 containing task: task_working_memory
+Training loss value at step 0: 6.706822872161865
+Training loss value at step 100: 0.001141849672421813
+Training loss value at step 200: 0.0012255546171218157
+Training loss value at step 300: 0.0006619884516112506
+Training loss value at step 400: 0.0001784403866622597
+Training loss value at step 500: 7.688703772146255e-05
+Training loss value at step 600: 0.006963863503187895
+Training loss value at step 700: 0.005329686217010021
+Training accuracy over whole file: 0.9824658036231995
+---------------------------------------------------
+Fitting on file 8 containing task: rest
+Training loss value at step 0: 1.3306883573532104
+Training loss value at step 100: 0.004622369538992643
+Training loss value at step 200: 0.002374093746766448
+Training loss value at step 300: 0.00028355870745144784
+Training loss value at step 400: 0.012120995670557022
+Training loss value at step 500: 0.0010839784517884254
+Training loss value at step 600: 0.013565498404204845
+Training loss value at step 700: 0.0006150499684736133
+Training accuracy over whole file: 0.9825642704963684
+---------------------------------------------------
+--------------------------------------------------------------
+Fitting on files 24-32....
+Fitting on file 1 containing task: task_motor
+Training loss value at step 0: 6.946207523345947
+Training loss value at step 100: 0.006167427636682987
+Training loss value at step 200: 0.009934977628290653
+Training loss value at step 300: 0.0009232072625309229
+Training loss value at step 400: 0.00039772229501977563
+Training loss value at step 500: 0.000554288737475872
+Training loss value at step 600: 0.0012807984603568912
+Training loss value at step 700: 6.854299135738984e-05
+Training accuracy over whole file: 0.9820986390113831
+---------------------------------------------------
+Fitting on file 2 containing task: task_story_math
+Training loss value at step 0: 7.348335266113281
+Training loss value at step 100: 0.03564535081386566
+Training loss value at step 200: 0.009219336323440075
+Training loss value at step 300: 0.002245168900117278
+Training loss value at step 400: 0.01221026387065649
+Training loss value at step 500: 0.002423684811219573
+Training loss value at step 600: 0.003253169357776642
+Training loss value at step 700: 0.0021877181716263294
+Training accuracy over whole file: 0.9816201329231262
+---------------------------------------------------
+Fitting on file 3 containing task: rest
+Training loss value at step 0: 0.20565786957740784
+Training loss value at step 100: 0.003024529432877898
+Training loss value at step 200: 0.6370861530303955
+Training loss value at step 300: 2.8609820219571702e-05
+Training loss value at step 400: 0.006879808846861124
+Training loss value at step 500: 0.0010265801101922989
+Training loss value at step 600: 0.00010883215873036534
+Training loss value at step 700: 0.0005597693379968405
+Training accuracy over whole file: 0.9814580678939819
+---------------------------------------------------
+Fitting on file 4 containing task: task_working_memory
+Training loss value at step 0: 6.904328346252441
+Training loss value at step 100: 0.002689199522137642
+Training loss value at step 200: 0.00023326536756940186
+Training loss value at step 300: 0.004160914570093155
+Training loss value at step 400: 0.0021407324820756912
+Training loss value at step 500: 0.0018899451242759824
+Training loss value at step 600: 5.125986263010418e-06
+Training loss value at step 700: 0.00023934361524879932
+Training accuracy over whole file: 0.9809463620185852
+---------------------------------------------------
+Fitting on file 5 containing task: task_story_math
+Training loss value at step 0: 8.213147163391113
+Training loss value at step 100: 0.0022509971167892218
+Training loss value at step 200: 0.0012640113709494472
+Training loss value at step 300: 0.0010941001819446683
+Training loss value at step 400: 0.0001472126314183697
+Training loss value at step 500: 0.00020203932945150882
+Training loss value at step 600: 9.262132516596466e-05
+Training loss value at step 700: 0.0038168213795870543
+Training accuracy over whole file: 0.9806879162788391
+---------------------------------------------------
+Fitting on file 6 containing task: rest
+Training loss value at step 0: 0.07903372496366501
+Training loss value at step 100: 0.004483172204345465
+Training loss value at step 200: 0.0033403809648007154
+Training loss value at step 300: 0.00040975757292471826
+Training loss value at step 400: 0.00038378025055862963
+Training loss value at step 500: 0.00020358874462544918
+Training loss value at step 600: 0.0001578206429257989
+Training loss value at step 700: 0.00015746307326480746
+Training accuracy over whole file: 0.9806573987007141
+---------------------------------------------------
+Fitting on file 7 containing task: rest
+Training loss value at step 0: 6.9141146923357155e-06
+Training loss value at step 100: 7.867782187531702e-06
+Training loss value at step 200: 0.0005828827270306647
+Training loss value at step 300: 0.005196516867727041
+Training loss value at step 400: 0.004131473135203123
+Training loss value at step 500: 0.00010966652916977182
+Training loss value at step 600: 6.103329360485077e-05
+Training loss value at step 700: 0.0018498466815799475
+Training accuracy over whole file: 0.9812813401222229
+---------------------------------------------------
+Fitting on file 8 containing task: task_working_memory
+Training loss value at step 0: 5.702873706817627
+Training loss value at step 100: 0.0075566633604466915
+Training loss value at step 200: 2.52720492426306e-05
+Training loss value at step 300: 0.002836254658177495
+Training loss value at step 400: 0.0007870675181038678
+Training loss value at step 500: 0.00011431517486926168
+Training loss value at step 600: 5.471556869451888e-05
+Training loss value at step 700: 0.0002002515539061278
+Training accuracy over whole file: 0.9809971451759338
+---------------------------------------------------
+--------------------------------------------------------------
+WARNING:tensorflow:Skipping full serialization of Keras layer <keras.src.layers.core.dense.Dense object at 0x28e55c3d0>, because it is not built.
+INFO:tensorflow:Assets written to: models/trained_LSTM_e2_5_20_intra/assets
