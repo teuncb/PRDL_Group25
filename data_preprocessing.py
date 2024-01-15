@@ -5,34 +5,46 @@ from skimage.measure import block_reduce
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.preprocessing import StandardScaler
 
-i_train_path = "MEG_Data/Final Project data/Intra/train"
-i_train_prepro_path = "MEG_Data/Final Project data/Intra/train_prepro"
-i_train_prepro_path_mesh = "MEG_Data/Final Project data/Intra/train_prepro_mesh"
-i_test_path = "MEG_Data/Final Project data/Intra/test"
+# All data paths
+i_train_path = "Final Project data/Intra/train"
+i_train_prepro_path = "Final Project data/Intra/train_prepro"
+i_train_prepro_path_mesh = "Final Project data/Intra/train_prepro_mesh"
+i_test_path = "Final Project data/Intra/test"
 
-c_train_path = "MEG_Data/Final Project data/Cross/train"
-c_train_prepro_path = "MEG_Data/Final Project data/Cross/train_prepro"
-c_train_prepro_path_mesh = "MEG_Data/Final Project data/Cross/train_prepro_mesh"
-c_test1_prepro_path = "MEG_Data/Final Project data/Cross/test1_prepro"
-c_test1_prepro_path_mesh = "MEG_Data/Final Project data/Cross/test1_prepro_mesh"
-c_test1_path = "MEG_Data/Final Project data/Cross/test1"
-c_test2_path = "MEG_Data/Final Project data/Cross/test2"
-c_test3_path = "MEG_Data/Final Project data/Cross/test3"
+c_train_path = "Final Project data/Cross/train"
+c_train_prepro_path = "Final Project data/Cross/train_prepro"
+c_train_prepro_path_mesh = "Final Project data/Cross/train_prepro_mesh"
+c_test1_path = "Final Project data/Cross/test1"
+c_test2_path = "Final Project data/Cross/test2"
+c_test3_path = "Final Project data/Cross/test3"
 
 
-def prepro_cross_files():  # Preprocess all the files and save them
+def prepro_cross_files():
+    """
+    Preprocess all cross files and save them in a specific directory
+
+    :return: Void
+    """
+    # Get all files in the directory
     dirnames = os.listdir(c_train_path)
+
     for dir in dirnames:
+        # Read and preprocess all datafiles in the directory
         data = read_data_file(c_train_path + "/" + dir)
+
         scaled_data = scale(data, StandardScaler(), timewise=True)  # Beg that this returns an nparray
         new_data = downsample_matrix(scaled_data, 9)
+
         mesh_data = create_meshes(new_data)
+
+        # Save the preprocessed data in a new file in a new directory
         try:
             hfive = h5py.File(c_train_prepro_path + "/" + dir, 'w')
         except:
-            raise Exception("You forgot to make a train_prepro path")  # Can maybe be automated idk
+            raise Exception("You forgot to make a train_prepro path")
         hfive.create_dataset('dir', data=new_data)
         hfive.close()
+        # The same for the preprocessed data that was converted into meshes (for CascadeNet)
         try:
             hfivemesh = h5py.File(c_train_prepro_path_mesh + "/" + dir, 'w')
         except:
@@ -41,9 +53,17 @@ def prepro_cross_files():  # Preprocess all the files and save them
         hfivemesh.close()
 
 
-def prepro_intra_files():  # Preprocess all the files and save them
-    dirnames = os.listdir(i_train_path)  # Get all the original files
-    for dir in dirnames:  # For each file
+def prepro_intra_files():
+    """
+    Preprocess the intra files and save them in a separate directory
+
+    :return: Void
+    """
+    # Get all the original files
+    dirnames = os.listdir(i_train_path)
+
+    for dir in dirnames:
+        # Read and preprocess all files in the directory
         data = read_data_file(i_train_path + "/" + dir)  # Load the data
         scaled_data = scale(data, StandardScaler(), timewise=True)  # Scale the data
         new_data = downsample_matrix(scaled_data, 9)  # Downsample the data
@@ -61,27 +81,57 @@ def prepro_intra_files():  # Preprocess all the files and save them
         hfivemesh.create_dataset('dir', data=mesh_data)  # Enter data into the object
         hfivemesh.close()
 
-def prepro_cross_test():  # Preprocess all the files and save them
-    dirnames = os.listdir(c_test1_path)
+def prepro_test_set():
+    # This directory was designated as the 'validation data'
+    path = "Final Project data/Cross/test2"
+
+    dirnames = os.listdir(path)
+
     for dir in dirnames:
-        data = read_data_file(c_test1_path + "/" + dir)
-        scaled_data = scale(data, StandardScaler(), timewise=True)  # Beg that this returns an nparray
+        # Load and preprocess the data in this directory
+        data = read_data_file(path + "/" + dir)
+        scaled_data = scale(data, StandardScaler(), timewise=True)
         new_data = downsample_matrix(scaled_data, 9)
-        mesh_data = create_meshes(new_data)
         try:
-            hfive = h5py.File(c_test1_prepro_path + "/" + dir, 'w')
+            hfive = h5py.File("Final Project data/Cross/test2_prepro" + "/" + dir, 'w')
         except:
-            raise Exception("You forgot to make a test1_prepro path")  # Can maybe be automated idk
+            raise Exception("You forgot to make a train_prepro path")
         hfive.create_dataset('dir', data=new_data)
         hfive.close()
+
+
+def prepro_validation_set():
+    """
+    Does the preprocessing for the validation set
+
+    :return: Void
+    """
+    # This directory was designated as the 'validation data'
+    path = "Final Project data/Intra/val"
+
+    dirnames = os.listdir(path)
+
+    for dir in dirnames:
+        # Load and preprocess the data in this directory
+        data = read_data_file(path + "/" + dir)
+        scaled_data = scale(data, StandardScaler(), timewise=True)
+        new_data = downsample_matrix(scaled_data, 9)
         try:
-            hfivemesh = h5py.File(c_test1_prepro_path_mesh + "/" + dir, 'w')
+            hfive = h5py.File("Final Project data/Intra/val_prepro" + "/" + dir, 'w')
         except:
-            raise Exception("You forgot to make a test1_prepro_mesh path")  # Open a new h5 object
-        hfivemesh.create_dataset('dir', data=mesh_data)  # Enter data into the object
-        hfivemesh.close()
+            raise Exception("You forgot to make a train_prepro path")
+        hfive.create_dataset('dir', data=new_data)
+        hfive.close()
+
 
 def get_dataset_name(file_name_with_dir):
+    """
+    Given a filepath, extract the name of the file
+
+    :param file_name_with_dir: filpath that includes filename
+    :return: filename
+    """
+    # The filename is last in the path
     filename_without_dir = file_name_with_dir.split('/')[-1]
     temp = filename_without_dir.split('_')[:-1]
     dataset_name = "_".join(temp)
@@ -89,10 +139,22 @@ def get_dataset_name(file_name_with_dir):
 
 
 def sigmoid(x):
+    """
+    Implementation of the sigmoid function
+
+    :param x: input to the sigmoid
+    :return: the value of applying the sigmoid to x
+    """
     return 1 / (1 + np.exp(-x))
 
 
 def read_data_file(data_path):
+    """
+    Given the path of a data file, read it and return the data as an array
+
+    :param data_path: path of the data
+    :return: array containing the data
+    """
     with h5py.File(data_path, 'r') as f:
         dataset_name = get_dataset_name(data_path)
         matrix = f.get(dataset_name)[()]
@@ -100,6 +162,12 @@ def read_data_file(data_path):
 
 
 def read_prepro_file(data_path):
+    """
+    Read a preprocessed data file that needed to be saved without a table name, so needs a separate function
+
+    :param data_path: the path of the preprocessed data
+    :return: the data in an array
+    """
     hfive = h5py.File(data_path, 'r')
     matrix = hfive.get('dir')
     matrix = np.array(matrix)
@@ -107,12 +175,27 @@ def read_prepro_file(data_path):
 
 
 def scale(matrix, scaler, timewise=False):
+    """
+    Apply a scaler to an array of data
+
+    :param matrix: the data that needs to be scaled
+    :param scaler: a scaler object
+    :param timewise: whether we want to scale with a temporal aspect in mind
+    :return: the scaled data
+    """
     scaler_input = matrix.T if timewise else matrix
     scaled_matrix = scaler.fit_transform(scaler_input)
     return scaled_matrix.T if timewise else scaled_matrix
 
 
 def array_to_mesh(arr):
+    """
+    This function is borrowed from Abdellaoui, I. A., Fernandez, J. G., Sahinli, C., & Mehrkanoon, S. (2020).
+    Deep brain state classification of MEG data. arXiv preprint arXiv:2007.00897.
+
+    :param arr: the array which we want to convert to a mesh
+    :return: the array as mesh
+    """
     input_rows = 20
     input_columns = 21
     input_channels = 248
@@ -413,8 +496,14 @@ def array_to_mesh(arr):
 
 
 def create_meshes(matrix):
+    """
+    Given a matrix of data with multiple timesteps, create a 3D array with meshes
+
+    :param matrix: a matrix with multiple timesteps as columns
+    :return: a 3D array of meshes
+    """
     # Determine how many timesteps the input array represents
-    time_steps = matrix.shape[1]  # Niet ge-hardcode want het wordt anders zodra we gaan downsamplen
+    time_steps = matrix.shape[1]
 
     meshes = []
 
@@ -428,7 +517,7 @@ def create_meshes(matrix):
 
         i += 1
 
-    # Stack the 2D meshes to become a 3D array of shape (width, height, timesteps)
+    # Stack the 2D meshes to become a 3D array of shape (width, height, timesteps) --> moet (timesteps, height, width, channels) worden
     stacked_meshes = np.stack(meshes, axis=-1)
 
     return stacked_meshes
@@ -462,10 +551,18 @@ def downsample_matrix(matrix, n, leave_out=True):
 
 
 def create_windows(dataset, model_type, timeframe):
+    """
+    Given the dataset, divide it into windows
+
+    :param dataset: the dataset
+    :param model_type: determines whether we need to divide the array in dimension 1 or 2
+    :param timeframe: how many timesteps should be included in one window
+    :return: a list of windows
+    """
     # Will contain the slices of the dataset that represent the different windows
     windows = []
 
-    if model_type == "cascade":
+    if model_type == "convlstm":
         num_windows = int(dataset.shape[2] / timeframe)
     else:
         num_windows = int(dataset.shape[1] / timeframe)
@@ -477,7 +574,7 @@ def create_windows(dataset, model_type, timeframe):
     # Loop through the dataset until we have the specified number of windows (might cut off some of the last timesteps)
     while count < num_windows:
         # Save the view of the array in the windows list
-        if model_type == "cascade":
+        if model_type == "convlstm":
             view = dataset[:, :, j:i]
         else:
             view = dataset[:, j:i]
@@ -490,12 +587,17 @@ def create_windows(dataset, model_type, timeframe):
     return windows
 
 
+prepro_test_set()
+
 # prepro_cross_files()
 # print("done with cross")
-# prepro_cross_test()
-# print("done with test prepro")
+# prepro_cross_files()
+# print("done with cross")
 
-
+# print("Preprocessing validation set")
+# prepro_validation_set()
+# print("Done preprocessing validation set!")
+# test
 # test = read_data_file("MEG_data/Final Project data/Intra/train/rest_105923_1.h5")
 # print(test.shape)
 # test_prepro = read_prepro_file("MEG_data/Final Project data/Intra/train_prepro/rest_105923_1.h5")
