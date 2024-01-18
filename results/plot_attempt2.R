@@ -16,7 +16,7 @@ ggplot(dat, aes(x = learning_rate, y = acc, color = factor(timeframe),
                       shape = factor(lstm_units), linetype = factor(lstm_units))) +
   geom_point() +
   geom_line(aes(group = interaction(timeframe, lstm_units)), size=1) +
-  # scale_x_discrete(labels=c('1e-4', '1e-3', '1e-2'), limits=rev) +
+  scale_x_discrete(labels=c('1e-4', '1e-3', '1e-2'), limits=rev) +
   labs(x = "Learning Rate",
        y = "Accuracy",
        color = "Timeframe",
