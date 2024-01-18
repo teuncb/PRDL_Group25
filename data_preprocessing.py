@@ -81,9 +81,8 @@ def prepro_intra_files():
         hfivemesh.create_dataset('dir', data=mesh_data)  # Enter data into the object
         hfivemesh.close()
 
-def prepro_test_set():
+def prepro_test_set(path):
     # This directory was designated as the 'validation data'
-    path = "Final Project data/Cross/test2"
 
     dirnames = os.listdir(path)
 
@@ -585,20 +584,3 @@ def create_windows(dataset, model_type, timeframe):
         count += 1
     # Return the list of array views
     return windows
-
-
-prepro_test_set()
-
-# prepro_cross_files()
-# print("done with cross")
-# prepro_cross_files()
-# print("done with cross")
-
-# print("Preprocessing validation set")
-# prepro_validation_set()
-# print("Done preprocessing validation set!")
-# test
-# test = read_data_file("MEG_data/Final Project data/Intra/train/rest_105923_1.h5")
-# print(test.shape)
-# test_prepro = read_prepro_file("MEG_data/Final Project data/Intra/train_prepro/rest_105923_1.h5")
-# print(test_prepro.shape)

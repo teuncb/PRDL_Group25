@@ -1,129 +1,109 @@
 import tensorflow as tf
-import keras
+from tensorflow import keras
 import re
 import os
 import random
 import numpy as np
+from lstm import JustLSTM
+from sklearn.preprocessing import LabelBinarizer
+from eval import evaluate_model
+from convLSTM import ConvLSTM
+import eval
 
 import data_preprocessing
-from cascadeNet import CascadeNet
 
 
-# tf function zal niet heel veel uitmaken volgens de documentatie, omdat wij veel convolutional operations hebben (waarbij de speedup dus meevalt)
-def train_epoch(model, x_train, y_train, optimizer, train_acc):
-    # Instantiate an optimizer and loss function
-    loss_function = keras.losses.CategoricalCrossentropy()
+def extract_label(filename):
+    """
+    Extract the label out of a filename.
 
-    total_loss = 0
-
-    # Doet nu nog wel een update per window, wellicht veel? We kunnen ook nog batches gaan gebruiken om het aantal updates te reduceren
-    for step in range(len(x_train)):
-        # Used to track the gradients during the forward pass
-        with tf.GradientTape() as tape:
-            logits = model(tf.expand_dims(x_train[step], axis=0), training=True)
-            # Calculate the loss value
-            loss_value = loss_function(y_train[step], logits)
-
-        total_loss += loss_value
-
-        # Extract the gradients from the gradienttape
-        grads = tape.gradient(loss_value, model.trainable_weights)
-
-        # Perform a weight update step using the extracted gradients
-        optimizer.apply_gradients(zip(grads, model.trainable_weights))
-        # Keep track of the training accuracy which is given at the end of the loop
-        train_acc.update_state(y_train[step], logits)
-
-        # Report the training loss for monitoring
-        if step % 100 == 0:
-            print("Training loss value at step {}: {}".format(step, loss_value))
-
-    print("Training accuracy over whole file: {}".format(train_acc.result()))
-    print("---------------------------------------------------")
-    average_loss = total_loss / len(x_train)
-    return average_loss, train_acc
+    :param filename: the filename that includes the label.
+    :return: the label corresponding to the data in the file.
+    """
+    filename = filename.split("/")
+    pattern = r'_\d'
+    # Split the filename based on the regular expression
+    split = re.split(pattern, filename[-1])
+    # The label is the first item in the filename
+    return split[0]
 
 
-# TODO: kijken of we de input als tensors willen doen (wat wel netter is I guess) of makkelijker als np arrays --> netwerk vindt allebei goed
-def fit_eight(model, model_type, dirlist, parent_path, optimizer, timeframe, label_encoder,
-              train_acc_obj):  # Fit a network on 8 datafiles at a time.
-    fit_list = []
-    average_loss = 0
-    i = 0
-    j = 0
-    while i < 8:  # Load the 8 datafiles
-        filename = parent_path + "/" + dirlist[i]
+def train_dir(model, model_type, dirpath, epochs, timeframe, label_encoder):
+    """
+    Trains a model on all files in the given directory.
 
-        data = data_preprocessing.read_prepro_file(filename)
-        label = extract_label(filename)
+    :param model: the model that needs to be trained.
+    :param model_type: whether the model is an 'lstm' or a 'convlstm'.
+    :param dirpath: the path to the training data.
+    :param epochs: how many epochs we would like to fit the model on this directory.
+    :param timeframe: how many timesteps are included in one window.
+    :param label_encoder: used to transform the textual labels into numeric ones.
+    :return: Void
+    """
+    # Get a list of all filenames
+    dirnames = os.listdir(dirpath)
 
-        fit_list.append((data, label))
-        i += 1
-
-    for counter, (data, label) in enumerate(fit_list):
-        print("Fitting on file {} containing task: {}".format((counter + 1), label))
-        # Creates windows of length 'timeframe' to fit the model on
-        windows = data_preprocessing.create_windows(data, model_type, timeframe)
-        x_train = []
-        # Only needed for CascadeNet, not for the LSTM network
-        for window in windows:
-            if model_type == "cascade":
-                x_train.append(tf.convert_to_tensor(window))
-            else:
-                x_train.append(tf.convert_to_tensor(np.transpose(window)))
-
-        # Encode the textual label to one-hot-encoding
-        encoded_label = label_encoder.transform([label])
-        # Create a list of tensors, each corresponding to an encoded label
-        y_train = [tf.convert_to_tensor(encoded_label)] * len(x_train)
-
-        # Fit the model on the data from this specific file
-        average_loss, train_acc_obj = train_epoch(model, x_train, y_train, optimizer, train_acc_obj)
-
-    return average_loss, train_acc_obj
-
-
-def train_dir(model, model_type, dirpath, epochs, timeframe, optimizer, label_encoder,
-              shuffle=True):  # Train a network on a given directory
-    dirnames = os.listdir(dirpath)  # get list of all filenames
     random.shuffle(dirnames)
-    batches = len(dirnames) // 8  # int divide by eight to avoid float errors
+    # Int divide by eight to avoid float errors
+    batches = len(dirnames) // 8
 
-    train_acc_obj = keras.metrics.CategoricalAccuracy()
-
-    average_epoch_accuracy = 0
-    average_epoch_loss = 0
-    losses = []
-    accuracies = []
-
-    # Check if it is divisible by eight
-    if not (len(dirnames) % 8) == 0:
-        raise TypeError("Not divisible by eight")
-
+    # Go over all files in the directory for the amount of epochs that was specified
     for epoch in range(epochs):
         print("Starting epoch {}".format(epoch + 1))
         print()
-        train_acc_obj.reset_states()
-        for i in range(batches):  # Fit on 8 batches at a time                HIER IPV 1 WEER 'BATCHES' NEERZETTEN
+
+        # Fit on 8 files at a time (one file is considered one batch)
+        for i in range(batches):
+            fit_list = []
             print("Fitting on files {}-{}....".format((i * 8), ((i + 1) * 8)))
-            # Fits the model on 8 files for the specified amount of epochs
-            average_loss, train_acc_obj = fit_eight(model, model_type, dirnames[i * 8:(i + 1) * 8], dirpath, optimizer,
-                                                    timeframe, label_encoder, train_acc_obj)
-            average_epoch_loss += average_loss
-            average_epoch_accuracy += train_acc_obj.result()
+
+            files = dirnames[i * 8:(i + 1) * 8]
+            # Load all the data from the 8 files and extract their corresponding labels
+            for j in range(8):
+                filename = dirpath + "/" + files[j]
+
+                data = data_preprocessing.read_prepro_file(filename)
+                label = extract_label(filename)
+
+                fit_list.append((data, label))
+
+
+            x_temp = []
+            y_temp = []
+
+            # Preprocess the data from the current 8 files
+            for counter, (data, label) in enumerate(fit_list):
+                # Creates windows of length 'timeframe' to fit the model on
+                windows = data_preprocessing.create_windows(data, model_type, timeframe)
+
+                # Will temporarily store the windows
+                x_windows = []
+
+                for window in windows:
+                    if model_type == "convlstm":
+                        # The windows are in shape (20, 21, timeframe), but the ConvLSTM network needs the timeframe first in the shape
+                        res = np.reshape(window, (timeframe, 20, 21))
+                        x_windows.append(np.expand_dims(res, axis=-1))
+                    else:
+                        x_windows.append(np.transpose(window))
+
+                # Store all the windows of the current file in x_temp
+                x_temp.extend(x_windows)
+
+                # Encode the textual label to one-hot-encoding
+                encoded_label = label_encoder.transform([label])
+
+                y_current = [np.squeeze(encoded_label)] * len(x_windows)
+                y_temp.extend(y_current)
+
+            # Stack all windows of the 8 files to gain a training batch
+            x_train = np.stack(x_temp, axis=0)
+            y_train = np.stack(y_temp, axis=0)
+
+            # Fit the model on the data of the current batch (8 files)
+            model.fit(x_train, y_train, epochs=1)
 
             print("--------------------------------------------------------------")
 
-        losses.append(average_epoch_loss)
-        accuracies.append(average_epoch_accuracy)
-
-    # SAVE THE MODEL AFTER TRAINING!!!!
-
-    return model, losses, accuracies
-
-
-def extract_label(filename):  # Extract the label out of a filename
-    filename = filename.split("/")
-    pattern = r'_\d'
-    split = re.split(pattern, filename[-1])
-    return split[0]
+    # Save the model after training
+    model.save("trained_LSTM_tf10_e4_50lstm_100ep_intra")

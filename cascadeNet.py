@@ -10,7 +10,6 @@ class CascadeNet(keras.Model):
     def __init__(self, input_shape, num_segments, num_classes=4):
         super().__init__()
 
-        # TODO: kijken of we input shape niet uit elkaar trekken in width, height, batch_size en timesteps (nu num_segments)
         self.in_shape = input_shape
         self.num_classes = num_classes
 
@@ -89,21 +88,3 @@ class CascadeNet(keras.Model):
         """
         x = keras.Input(self.in_shape)
         return keras.Model(inputs=[x], outputs=self.call(x))
-
-
-# model = CascadeNet((20, 21, 1), 5, 4)
-#
-# # parameter waarden (voor loss metrics en optimizer) hier zijn gewoon voorbeelden, worden uiteindelijk wellicht anders
-# model.compile(
-#           loss=keras.losses.CategoricalCrossentropy(),
-#           metrics=keras.metrics.CategoricalAccuracy(),
-#           optimizer=keras.optimizers.Adam())
-#
-# print(model.build_graph().summary())
-
-# Model is now ready for training!
-
-
-# Kleine side-note: bijna all trainable parameters zitten in de fully connected layer (duh), namelijk 55 miljoen
-# Volgens de paper van Zhang et al. was deze layer niet nodig maar leidde het wel tot betere performance (en blijkbaar belangrijk voor convergence)
-# Als het trainen tering lang duurt kunnen we ook kijken wat de performance zonder deze layer is
